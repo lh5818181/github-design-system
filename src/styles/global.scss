@@ -1,0 +1,23 @@
+@use './design-tokens/colors';
+@use './design-tokens/fonts';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--fg-default);
+  background-color: var(--bg-default);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
