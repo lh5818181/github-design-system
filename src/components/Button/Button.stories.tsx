@@ -22,3 +22,31 @@ const template: Story = {
 export const Default: Story = {
   ...template,
 };
+
+export const Primary: Story = {
+  ...template,
+  args: {
+    variant: 'primary',
+  },
+};
+
+export const Secondary: Story = {
+  ...template,
+  args: {
+    variant: 'secondary',
+  },
+};
+
+export const Danger: Story = {
+  ...template,
+  args: {
+    variant: 'danger',
+  },
+};
+
+export const Invisible: Story = {
+  ...template,
+  args: {
+    variant: 'invisible',
+  },
+};
