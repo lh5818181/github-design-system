@@ -5,12 +5,12 @@ import styles from './styles.module.scss';
 
 export interface MenuItemProps {
   label: string;
-  isBadge: boolean;
-  count: number;
   icon: {
     src: string;
     alt: string;
   };
+  isBadge?: boolean;
+  count?: number;
 }
 
 export const MenuItem = ({
