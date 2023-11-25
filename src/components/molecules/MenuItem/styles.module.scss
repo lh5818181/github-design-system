@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: max-content;
+
+  img {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  span {
+    font-size: var(--font-body-medium);
+    color: var(--fg-default);
+  }
+}
