@@ -4,9 +4,9 @@ import { Divider } from '../../atoms/Divider';
 
 import { ButtonIcon, IconType } from '../../molecules/ButtonIcon';
 import { Search } from '../../molecules/Search';
+import { MenuItem, MenuItemProps } from '../../molecules/MenuItem';
 
 import styles from './styles.module.scss';
-import { MenuItem, MenuItemProps } from '../../molecules/MenuItem';
 
 export interface HeaderProps {
   logoUrl: string;
