@@ -1,6 +1,5 @@
 import { Badge } from '../../atoms/Badge';
-
-import { Icon, IconProps } from '../Icon';
+import { Image } from '../../atoms/Image';
 
 import styles from './styles.module.scss';
 
@@ -8,7 +7,10 @@ export interface MenuItemProps {
   label: string;
   isBadge: boolean;
   count: number;
-  icon: IconProps;
+  icon: {
+    src: string;
+    alt: string;
+  };
 }
 
 export const MenuItem = ({
@@ -19,7 +21,7 @@ export const MenuItem = ({
 }: MenuItemProps) => {
   return (
     <div className={styles.wrapper}>
-      <Icon {...icon} />
+      <Image {...icon} />
 
       <span>{label}</span>
 

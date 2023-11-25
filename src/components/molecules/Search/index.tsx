@@ -1,7 +1,7 @@
-import { Icon } from '../Icon';
+import { Image } from '../../atoms/Image';
 
-import LupeIcon from './icons/lupe.svg';
-import commandPaletteIcon from './icons/command-palette.svg';
+import LupeIcon from './assets/lupe.svg';
+import commandPaletteIcon from './assets/command-palette.svg';
 
 import styles from './styles.module.scss';
 
@@ -9,7 +9,7 @@ export const Search = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <Icon src={LupeIcon} alt="Ícone de uma lupa" />
+        <Image src={LupeIcon} alt="Ícone de uma lupa" />
 
         <div>
           <span>
@@ -20,7 +20,7 @@ export const Search = () => {
         </div>
 
         <div className={styles.commandPaletteContainer}>
-          <Icon src={commandPaletteIcon} alt="Ícone de uma linha de comando" />
+          <Image src={commandPaletteIcon} alt="Ícone de uma linha de comando" />
         </div>
       </div>
     </div>
