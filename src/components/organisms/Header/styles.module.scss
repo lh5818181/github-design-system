@@ -1,0 +1,54 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-inset);
+  padding: 1rem;
+  height: 6.75rem;
+}
+
+.globalBar {
+  display: flex;
+}
+
+.startColumn {
+  display: flex;
+  gap: 1rem;
+}
+
+.endColumn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: end;
+  flex: 1;
+}
+
+.menuContainer {
+  display: flex;
+  align-items: center;
+  height: 2.75rem;
+}
+
+.menu {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  & > div:first-child {
+    position: relative;
+
+    span {
+      font-weight: 600;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      width: 100%;
+      border-bottom: 2px solid #fd8c73;
+    }
+  }
+}
