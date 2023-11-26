@@ -4,6 +4,7 @@ const config: StorybookConfig = {
   stories: [
     '../src/components/**/*.stories.tsx',
     '../src/templates/**/*.stories.tsx',
+    '../src/pages/**/*.stories.tsx',
   ],
   addons: [
     '@storybook/addon-links',
