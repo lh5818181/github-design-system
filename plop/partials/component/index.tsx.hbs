@@ -1,0 +1,13 @@
+import styles from './styles.module.scss';
+
+export interface {{pascalCase name}}Props {
+  title: string
+}
+
+export const {{pascalCase name}} = ({ title }: {{pascalCase name}}Props) => {
+  return (
+    <div className={styles.wrapper}>
+      <h1>{title}</h1>
+    </div>
+  );
+};
