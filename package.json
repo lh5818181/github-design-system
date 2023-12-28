@@ -11,7 +11,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "generate": "npx plop --plopfile plop/plopfile.js",
-    "generate:component": "npm run generate component"
+    "generate:component": "npm run generate component",
+    "generate:template": "npm run generate template"
   },
   "dependencies": {
     "react": "^18.2.0",

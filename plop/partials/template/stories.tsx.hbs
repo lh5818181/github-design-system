@@ -1,0 +1,26 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { {{pascalCase name}} } from '.';
+
+import { {{camelCase name}}Mock } from './mock';
+
+const meta: Meta<typeof {{pascalCase name}}> = {
+  title: 'Templates/{{pascalCase name}}',
+  component: {{pascalCase name}},
+  args: {{camelCase name}}Mock,
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof {{pascalCase name}}>;
+
+const template: Story = {
+  render: (args) => <{{pascalCase name}} {...args} />,
+};
+
+export const Default: Story = {
+  ...template,
+};
