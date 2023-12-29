@@ -1,0 +1,26 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { {{pascalCase name}}Page } from '.';
+
+import { {{camelCase name}}PageMock } from './mock';
+
+const meta: Meta<typeof {{pascalCase name}}Page> = {
+  title: 'Pages/{{pascalCase name}}Page',
+  component: {{pascalCase name}}Page,
+  args: {{camelCase name}}PageMock,
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof {{pascalCase name}}Page>;
+
+const template: Story = {
+  render: (args) => <{{pascalCase name}}Page {...args} />,
+};
+
+export const Default: Story = {
+  ...template,
+};

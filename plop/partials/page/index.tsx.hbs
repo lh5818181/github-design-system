@@ -1,0 +1,8 @@
+import { {{pascalCase name}}Template } from '../../templates/{{pascalCase name}}Template';
+import type { {{pascalCase name}}TemplateProps } from '../../templates/{{pascalCase name}}Template';
+
+export type {{pascalCase name}}PageProps = {{pascalCase name}}TemplateProps;
+
+export const {{pascalCase name}}Page = (props: {{pascalCase name}}PageProps) => {
+  return <{{pascalCase name}}Template {...props} />;
+};
