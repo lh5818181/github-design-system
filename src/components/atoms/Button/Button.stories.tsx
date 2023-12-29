@@ -5,6 +5,12 @@ import { Button } from '.';
 const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',
   component: Button,
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/Ndky1znOZhxmkNfmdk6hPY/Primer-Web?type=design&node-id=14919-49961&mode=design&t=4yi7LC3OSYlspLGD-0',
+    },
+  },
   args: {
     children: 'Button',
     variant: 'secondary',
