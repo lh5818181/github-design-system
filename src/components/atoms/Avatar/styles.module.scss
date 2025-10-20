@@ -1,0 +1,38 @@
+$size-small: 20px;
+$size-medium: 32px; // Padrão
+$size-large: 48px;
+$size-xlarge: 96px; // Para páginas de perfil
+
+.avatar {
+  border-radius: 50%; // Deixa a imagem circular
+  object-fit: cover; // Garante que a imagem preencha o espaço sem distorcer
+  background-color: #f6f8fa; // Cor de fundo para fallback/loading
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+// Estilos de tamanho
+.small {
+  width: $size-small;
+  height: $size-small;
+}
+
+.medium {
+  width: $size-medium;
+  height: $size-medium;
+}
+
+.large {
+  width: $size-large;
+  height: $size-large;
+}
+
+.xlarge {
+  width: $size-xlarge;
+  height: $size-xlarge;
+}
+
+// Estilo de destaque (Highlight)
+.highlight {
+  border: 2px solid var(--color-highlight); // Anel azul do GitHub
+  box-shadow: 0 0 0 2px #fff; // Anel branco para separar o highlight
+}

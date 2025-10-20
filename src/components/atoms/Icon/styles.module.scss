@@ -1,0 +1,12 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; // Previne que o ícone seja esmagado em layouts flex
+}
+
+.icon {
+  // Configurações básicas para o SVG
+  stroke-width: 2; // Grosso do traço do ícone (lucide-react)
+  fill: none;
+}

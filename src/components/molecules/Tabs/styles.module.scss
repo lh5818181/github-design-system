@@ -1,0 +1,60 @@
+// src/components/molecules/Tabs/styles.module.scss
+
+.container {
+  display: flex;
+  border-bottom: 1px solid var(--color-border-default, #d0d7de); // Linha divisória inferior
+  margin-bottom: 16px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  margin-bottom: -1px; // Sobrepõe a borda inferior
+  font-size: 14px;
+  color: var(--color-text-default, #57606a);
+  border: 1px solid transparent; // Borda transparente para manter o espaçamento
+  border-bottom: 1px solid var(--color-border-default, #d0d7de);
+  font-weight: 500;
+  transition: color 0.15s ease-in-out;
+
+  &:hover {
+    color: var(--color-text-default-hover, #24292f);
+    border-bottom-color: var(--color-border-default, #d0d7de);
+    text-decoration: none; // Remove o underline do Link no hover
+  }
+}
+
+.active {
+  color: var(--color-text-active, #24292f);
+  border-color: var(--color-border-default, #d0d7de);
+  border-top: 3px solid var(--color-tab-active-border, #f78166); // Linha laranja do GitHub
+  background-color: var(--color-bg-active, #ffffff);
+  
+  // Como a borda superior é grossa, movemos a tab para baixo para compensar
+  transform: translateY(1px); 
+}
+
+.iconWrapper {
+  display: flex;
+  margin-right: 8px;
+  // A cor do ícone no GitHub geralmente muda para azul/laranja na aba ativa
+  color: var(--color-icon-default, #57606a); 
+  
+  .active & {
+    color: var(--color-text-active, #24292f);
+  }
+}
+
+.label {
+  margin-right: 8px;
+}
+
+.count {
+  background-color: var(--color-count-bg, #f6f8fa);
+  color: var(--color-count-text, #24292f);
+  padding: 2px 6px;
+  border-radius: 2em; // Formato de pílula
+  font-size: 12px;
+  font-weight: 600;
+}

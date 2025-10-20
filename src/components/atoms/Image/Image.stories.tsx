@@ -6,7 +6,7 @@ const meta: Meta<typeof Image> = {
   title: 'atoms/Image',
   component: Image,
   args: {
-    src: 'https://res.cloudinary.com/dbnq26wqe/image/upload/v1700505897/others/image_j8ej2v.jpg',
+    src: 'https://avatars.githubusercontent.com/u/100?v=4',
     alt: 'Avatar do usuário',
   }
 };
