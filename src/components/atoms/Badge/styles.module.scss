@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.25rem;
+  border-radius: 50%;
+  background-color: rgba(175, 184, 193, 0.2);
+  width: max-content;
+  min-width: 1.5rem;
+  height: 1rem;
+
+  span {
+    font-size: var(--font-body-small);
+    color: var(--fg-default);
+    font-weight: 600;
+  }
+}

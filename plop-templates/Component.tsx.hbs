@@ -1,0 +1,16 @@
+import styles from './styles.module.scss';
+import React from 'react';
+
+// Tipagem básica
+export type {{pascalCase name}}Props = {
+  // Defina as props aqui
+  children: React.ReactNode;
+};
+
+export const {{pascalCase name}} = ({ children }: {{pascalCase name}}Props) => {
+  return (
+    <div className={styles.container}>
+      {children}
+    </div>
+  );
+};

@@ -1,0 +1,26 @@
+import { Meta, StoryObj } from '@storybook/react';
+import { {{pascalCase name}}, {{pascalCase name}}Props } from '.';
+import { mockData } from './mock';
+
+// Define a metainformação da história
+const meta: Meta<{{pascalCase name}}Props> = {
+  title: '{{category}}/{{pascalCase name}}',
+  component: {{pascalCase name}},
+  tags: ['autodocs'],
+  args: {
+    // Valores padrão de props para o Storybook
+    children: 'Conteúdo do {{pascalCase name}}',
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<{{pascalCase name}}Props>;
+
+// Define a primeira história
+export const Default: Story = {
+  args: {
+    // Utilize mockData se necessário:
+    // ...mockData.defaultProps,
+  },
+};
