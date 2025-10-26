@@ -1,0 +1,74 @@
+.card {
+  padding: 16px 0;
+  border-top: 1px solid var(--color-border-default, #d0d7de);
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.statusIcon {
+  color: var(--color-icon-secondary, #57606a);
+}
+
+.repoLink {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-link-repository, #0969da); // Azul de link principal do GitHub
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.statusBadge {
+  // O Badge deve ser estilizado como um Átomo, aqui apenas garantimos o espaçamento
+  flex-shrink: 0;
+}
+
+.description {
+  color: var(--color-text-secondary, #57606a);
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: var(--color-text-secondary, #57606a);
+  gap: 16px;
+}
+
+.metadataItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metadataIcon {
+  // A cor do ícone deve vir do seu Átomo Icon, aqui garantimos o alinhamento
+}
+
+.metadataText {
+  // O texto já é definido pela cor do footer
+}
+
+.languageColor {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-default, #d0d7de);
+}

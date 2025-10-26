@@ -2,9 +2,11 @@ import { ReactNode } from 'react';
 
 import styles from './styles.module.scss';
 
-export interface BadgeProps {
+export type BadgeProps = {
   children: ReactNode;
-}
+  variant?: 'default' | 'secondary';
+  className?: string;
+};
 
 export const Badge = ({ children }: BadgeProps) => {
   return (
