@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none; // Evita selecionar o texto do label
+}
+
+.input {
+  // Esconde o input nativo, mas o mantém funcional
+  position: absolute;
+  opacity: 0;
+  cursor: inherit;
+
+  // Estilo do Checkmark/Toggle quando checked
+  &:checked + .checkMark {
+    background-color: var(--color-active, #0969da); // Azul do GitHub
+    border-color: var(--color-active, #0969da);
+  }
+}
+
+.label {
+  margin-left: 8px;
+  cursor: inherit;
+}
+
+// --- CHECKBOX (Estilo Padrão) ---
+
+.checkbox .checkMark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-border-default, #d0d7de);
+  border-radius: 4px;
+  background-color: var(--color-bg-default, #ffffff);
+  display: inline-block;
+  flex-shrink: 0;
+  position: relative;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+  // O V de check é feito com CSS after
+  &:after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.checkbox .input:checked + .checkMark:after {
+  display: block;
+}
+
+// --- TOGGLE (Estilo Switch) ---
+
+.toggle .checkMark {
+  position: relative;
+  width: 34px; // Largura do switch
+  height: 20px; // Altura do switch
+  border-radius: 10px;
+  background-color: var(--color-bg-toggle, #e1e4e8); // Cinza para desligado
+  transition: background-color 0.4s;
+  flex-shrink: 0; // Impede que o toggle mude de tamanho
+}
+
+.toggle .checkMark:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.4s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+// Posição do thumb quando ligado
+.toggle .input:checked + .checkMark {
+  background-color: var(--color-active, #0969da);
+}
+
+.toggle .input:checked + .checkMark:after {
+  transform: translateX(14px); // Move o thumb para a direita (34 - 16 - 2 - 2)
+}
+
+
+// --- ESTADO DESABILITADO ---
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  
+  .label {
+    color: var(--color-text-disabled, #8c959f);
+  }
+}

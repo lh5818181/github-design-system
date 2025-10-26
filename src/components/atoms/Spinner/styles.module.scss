@@ -1,0 +1,36 @@
+
+// Keyframes para a animação de rotação
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  border: 2px solid var(--color-spinner-border, rgba(9, 105, 218, 0.2)); // Cor de fundo da borda (transparente)
+  border-radius: 50%;
+  
+  // Cor ativa do Spinner (azul principal do GitHub)
+  border-top: 2px solid var(--color-spinner-active, #0969da);
+  border-left: 2px solid var(--color-spinner-active, #0969da);
+  
+  animation: spin 0.8s linear infinite; // Aplica a rotação
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+// --- Tamanhos ---
+
+.small {
+  width: 14px;
+  height: 14px;
+}
+
+.medium {
+  width: 20px;
+  height: 20px; // Padrão
+}
+
+.large {
+  width: 32px;
+  height: 32px;
+}

@@ -1,0 +1,73 @@
+
+.container {
+  padding: 16px 32px;
+  background-color: var(--color-bg-repo-header, #f6f8fa); // Um cinza claro de fundo
+  border-bottom: 1px solid var(--color-border-default, #d0d7de);
+}
+
+.titleSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap; // Permite quebrar em telas pequenas
+}
+
+.repoIdentity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  color: var(--color-icon-secondary, #57606a);
+}
+
+.repoTitle {
+  // O H1 deve ser grande, mas sem a margem inferior por causa do noMargin prop
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--color-text-default, #24292f);
+}
+
+.ownerName {
+  color: var(--color-text-secondary, #0969da); // Link owner azul
+}
+
+.repoName {
+  font-weight: 600;
+}
+
+.statusBadge {
+  margin-left: 4px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px; /* Para telas menores */
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  
+  /* Garante que o texto do botão fique visível se o Badge existir */
+  .actionLabel {
+    margin-right: 4px;
+  }
+}
+
+.description {
+  color: var(--color-text-secondary, #57606a);
+  font-size: 16px;
+  margin-bottom: 16px;
+  max-width: 800px; // Limita a largura para melhor leitura
+}
+
+.tabsSection {
+  // A Molécula Tabs irá se auto-organizar aqui
+  margin-top: 16px;
+  margin-bottom: -16px; // Ajusta o espaçamento para a borda do Tabs
+}
