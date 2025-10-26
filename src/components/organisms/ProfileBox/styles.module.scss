@@ -1,0 +1,74 @@
+// src/components/organisms/ProfileBox/styles.module.scss
+
+.container {
+  width: 100%;
+  max-width: 296px; // Largura típica da sidebar do GitHub
+  padding: 0 16px 16px 16px; 
+}
+
+.avatarSection {
+  margin-bottom: 16px;
+}
+
+.largeAvatar {
+  // O Avatar já deve ter a classe xlarge do Átomo Avatar
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+}
+
+.fullName {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 0px !important;
+}
+
+.usernameText {
+  font-size: 20px !important;
+  color: var(--color-text-secondary, #57606a) !important;
+  margin-bottom: 16px;
+}
+
+.actionSection {
+  margin-bottom: 16px;
+}
+
+.bio {
+  margin-bottom: 16px;
+}
+
+.followersSection {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+  
+  .dotSeparator {
+    font-size: 18px;
+    margin: 0 4px;
+    color: var(--color-text-secondary, #57606a);
+  }
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-border-default, #d0d7de);
+  margin: 16px 0;
+}
+
+.metadataSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metadataItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .metadataIcon {
+    color: var(--color-icon-secondary, #57606a);
+  }
+}
