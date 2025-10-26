@@ -1,0 +1,36 @@
+
+.text {
+  margin: 0; // Remove margem padrão de parágrafos
+  line-height: 1.5; // Altura de linha padrão para boa leitura
+}
+
+// --- Tamanhos ---
+
+.small {
+  font-size: 12px;
+}
+
+.medium {
+  font-size: 14px; // O tamanho padrão da maioria do texto do GitHub
+}
+
+.large {
+  font-size: 16px;
+}
+
+// --- Variações (Cor/Peso) ---
+
+.default {
+  color: var(--color-text-default, #24292f);
+  font-weight: 400;
+}
+
+.muted {
+  color: var(--color-text-secondary, #57606a); // Texto cinza para metadados ou descrições secundárias
+  font-weight: 400;
+}
+
+.bold {
+  color: var(--color-text-default, #24292f);
+  font-weight: 600; // Semi-bold para dar ênfase
+}
