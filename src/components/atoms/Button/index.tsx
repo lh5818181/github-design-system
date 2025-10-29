@@ -13,6 +13,7 @@ export interface ButtonProps {
   isLoading?: boolean;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
+  href?: string;
 }
 
 export const Button = ({ children, variant = 'secondary' }: ButtonProps) => {

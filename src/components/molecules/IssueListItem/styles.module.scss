@@ -1,0 +1,94 @@
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 16px;
+  border-top: 1px solid var(--color-border-default, #d0d7de);
+  transition: background-color 0.1s ease;
+
+  &:hover {
+    background-color: var(--color-bg-hover, #f6f8fa);
+  }
+}
+
+.statusIcon {
+  flex-shrink: 0;
+  padding-top: 5px; // Alinha o ícone com a linha de base do título
+  margin-right: 12px;
+}
+
+.mainContent {
+  flex-grow: 1;
+  min-width: 0; // Permite que o texto do título seja truncado
+}
+
+.issueTitle {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--color-text-default, #24292f);
+  
+  &:hover {
+    color: var(--color-link-hover, #0969da);
+    text-decoration: none;
+  }
+}
+
+.labelsContainer {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 8px; // Pequeno espaçamento após o título
+  
+  // No GitHub, as labels ficam na mesma linha do título em telas grandes
+  // e quebram abaixo em telas pequenas.
+}
+
+.metaData {
+  font-size: 12px;
+  color: var(--color-text-secondary, #57606a);
+  margin-top: 4px;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+  gap: 12px;
+}
+
+.comments {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-secondary, #57606a);
+}
+
+.commentIcon {
+  color: var(--color-icon-secondary, #656d76);
+}
+
+.assigneeAvatar {
+  // Ajuste do tamanho do avatar para o contexto
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+// Media Query para responsividade
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; // Esconde a lateral em telas muito pequenas para dar espaço ao título
+  }
+  
+  .issueTitle {
+    // Quebra de linha permite que o título ocupe todo o espaço
+    display: block; 
+  }
+  
+  .labelsContainer {
+    margin-left: 0;
+    margin-top: 4px;
+    display: flex; // Força a quebra de linha com o título
+  }
+}

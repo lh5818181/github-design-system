@@ -1,0 +1,98 @@
+.container {
+  border: 1px solid var(--color-border-default, #d0d7de);
+  border-radius: 6px;
+  background-color: var(--color-bg-default, #ffffff);
+  width: 100%;
+}
+
+// --- 1. Header (Links de Status e Botão Nova Issue) ---
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--color-border-default, #d0d7de);
+}
+
+.statusLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.statusLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  
+  &:hover {
+    color: var(--color-link-hover, #0969da);
+  }
+}
+
+// Ícones de status (simulados por bolinhas coloridas)
+.statusIconOpen, .statusIconClosed {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.statusIconOpen {
+    background-color: var(--color-status-open, #22863a); // Verde
+}
+
+.statusIconClosed {
+    background-color: var(--color-status-closed, #8250df); // Roxo
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+// --- 2. Filter Bar (Barra de Filtros Secundária) ---
+// NOTA: No GitHub, esta barra aparece ACIMA da lista de issues, mas ABAIXO do RepoHeader.
+// Aqui, colocamos internamente para simplificar o organismo.
+
+.filterBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: var(--color-bg-subtle, #f6f8fa); 
+    border-bottom: 1px solid var(--color-border-default, #d0d7de);
+}
+
+.filterDropdowns {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+// --- 3. Lista de Issues ---
+
+.issueList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  // Remove a borda superior do primeiro item, que já está no container
+  :global(.listItem:first-child) {
+      border-top: none; 
+  }
+}
+
+.noResults {
+    padding: 32px 16px;
+    text-align: center;
+}
+
+// --- 4. Footer (Paginação) ---
+
+.footer {
+    padding: 16px;
+    border-top: 1px solid var(--color-border-default, #d0d7de);
+    text-align: center;
+}

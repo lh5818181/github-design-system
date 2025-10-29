@@ -1,0 +1,26 @@
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg-default, #ffffff);
+}
+
+// Container para o RepoHeader (garante largura total da tela, mas com padding lateral)
+.repoContainer {
+  background-color: var(--color-bg-subtle, #f6f8fa); 
+  border-bottom: 1px solid var(--color-border-default, #d0d7de);
+  padding: 0 16px; // Padding lateral para telas pequenas
+}
+
+// Container para o conteúdo principal (centralizado e com largura limitada)
+.mainContent {
+  width: 100%;
+  max-width: 1280px; // Largura limitada do conteúdo principal do GitHub
+  margin: 0 auto;
+  padding: 24px 16px; // Espaçamento interno
+}
+
+.contentArea {
+  width: 100%;
+}
