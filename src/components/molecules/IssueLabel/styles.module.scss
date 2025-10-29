@@ -1,0 +1,36 @@
+.label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 7px;
+  height: 20px;
+  
+  // Estilo base
+  border-radius: 2em; // Bordas arredondadas (elipse)
+  font-weight: 600;
+  text-transform: capitalize; // O GitHub usa Capitalize, não uppercase
+  line-height: 1;
+  cursor: pointer;
+  
+  border: 1px solid transparent; // Necessário para o estilo outline
+  transition: opacity 0.1s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.labelText {
+  // Ajustes no Átomo Text
+  font-size: 12px !important; 
+}
+
+// Variação padrão: Fundo colorido (default)
+.filled {
+  // Cores são definidas via style prop
+}
+
+// Variação Outline: Borda colorida e fundo claro
+.outline {
+  background-color: transparent !important;
+  border-color: var(--color-border-default, #d0d7de);
+}

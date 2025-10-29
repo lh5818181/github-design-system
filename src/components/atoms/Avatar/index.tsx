@@ -16,24 +16,20 @@ export type AvatarProps = {
   highlight?: boolean;
 } & ImgHTMLAttributes<HTMLImageElement>;
 
-export const Avatar = ({ 
-  src, 
-  alt, 
-  size = 'medium', 
-  highlight = false, 
-  className, 
-  ...props 
+export const Avatar = ({
+  src,
+  alt,
+  size = 'medium',
+  highlight = false,
+  className,
+  ...props
 }: AvatarProps) => {
-
   // Combina classes de estilo para o tamanho e highlight
-  const avatarClasses = [
-    styles.avatar,
-    styles[size],
-    highlight ? styles.highlight : '',
-    className,
-  ].join(' ').trim();
+  const avatarClasses = [styles.avatar, styles[size], highlight ? styles.highlight : '', className]
+    .join(' ')
+    .trim();
 
-  // O fallback pode ser uma imagem padrão ou um ícone/letra. 
+  // O fallback pode ser uma imagem padrão ou um ícone/letra.
   // Por simplicidade, vamos usar o próprio componente Image (se já tiver criado) ou uma tag img.
 
   return (

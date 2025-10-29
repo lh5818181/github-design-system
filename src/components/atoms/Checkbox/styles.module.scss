@@ -34,7 +34,9 @@
   display: inline-block;
   flex-shrink: 0;
   position: relative;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
 
   // O V de check é feito com CSS after
   &:after {
@@ -89,13 +91,12 @@
   transform: translateX(14px); // Move o thumb para a direita (34 - 16 - 2 - 2)
 }
 
-
 // --- ESTADO DESABILITADO ---
 
 .disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  
+
   .label {
     color: var(--color-text-disabled, #8c959f);
   }

@@ -12,8 +12,7 @@ import GraphIcon from './assets/icons/graph-icon.svg';
 import GearIcon from './assets/icons/gear-icon.svg';
 
 export const headerMock = {
-  logoUrl:
-    'https://res.cloudinary.com/dbnq26wqe/image/upload/v1700505897/others/Icon_wd4lxk.jpg',
+  logoUrl: 'https://res.cloudinary.com/dbnq26wqe/image/upload/v1700505897/others/Icon_wd4lxk.jpg',
   avatarUrl:
     'https://res.cloudinary.com/dbnq26wqe/image/upload/v1700505897/others/image_j8ej2v.jpg',
   breadcrumb: {

@@ -11,7 +11,8 @@ const meta: Meta<TextProps> = {
     asSpan: { control: 'boolean' },
   },
   args: {
-    children: 'Este é um parágrafo de texto padrão, usado para a descrição de projetos ou documentação.',
+    children:
+      'Este é um parágrafo de texto padrão, usado para a descrição de projetos ou documentação.',
   },
 };
 
@@ -52,5 +53,5 @@ export const InlineText: Story = {
     <p>
       O usuário <Text {...args} /> atualizou o repositório principal.
     </p>
-  )
+  ),
 };

@@ -2,7 +2,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Input, InputProps } from '.';
 
-import { Search } from 'lucide-react'; 
+import { Search } from 'lucide-react';
 
 // Define a metainformação da história
 const meta: Meta<InputProps> = {

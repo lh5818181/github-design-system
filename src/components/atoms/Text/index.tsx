@@ -15,33 +15,27 @@ export type TextProps = {
   /** Variação de cor/peso. Padrão é 'default'. */
   variant?: TextVariant;
   /** Se true, renderiza o componente como um <span> em vez de <p>. */
-  asSpan?: boolean; 
+  asSpan?: boolean;
 } & HTMLAttributes<HTMLParagraphElement | HTMLSpanElement>; // Permite props de <p> ou <span>
 
-export const Text = ({ 
-  children, 
-  size = 'medium', 
+export const Text = ({
+  children,
+  size = 'medium',
   variant = 'default',
   asSpan = false,
-  className, 
-  ...props 
+  className,
+  ...props
 }: TextProps) => {
-
   // A tag a ser usada (padrão é <p>)
   const Component = asSpan ? 'span' : 'p';
 
   // Combina as classes CSS
-  const textClasses = [
-    styles.text,
-    styles[size],
-    styles[variant],
-    className,
-  ].join(' ').trim();
+  const textClasses = [styles.text, styles[size], styles[variant], className].join(' ').trim();
 
   return (
-    <Component 
-      className={textClasses} 
-      {...props as HTMLAttributes<HTMLParagraphElement> | HTMLAttributes<HTMLSpanElement>}
+    <Component
+      className={textClasses}
+      {...(props as HTMLAttributes<HTMLParagraphElement> | HTMLAttributes<HTMLSpanElement>)}
     >
       {children}
     </Component>

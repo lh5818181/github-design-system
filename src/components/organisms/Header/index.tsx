@@ -15,12 +15,7 @@ export interface HeaderProps {
   menu: MenuItemProps[];
 }
 
-export const Header = ({
-  logoUrl,
-  avatarUrl,
-  breadcrumb,
-  menu,
-}: HeaderProps) => {
+export const Header = ({ logoUrl, avatarUrl, breadcrumb, menu }: HeaderProps) => {
   return (
     <header className={styles.wrapper}>
       <div className={styles.globalBar}>

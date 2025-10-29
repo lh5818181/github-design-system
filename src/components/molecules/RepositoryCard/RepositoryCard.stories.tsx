@@ -12,8 +12,8 @@ const meta: Meta<RepositoryCardProps> = {
   },
   argTypes: {
     metadata: { control: { disable: true } }, // Passado via mock
-    isPrivate: { control: 'boolean' }
-  }
+    isPrivate: { control: 'boolean' },
+  },
 };
 
 export default meta;
@@ -40,8 +40,8 @@ export const PythonRepo: Story = {
     language: 'Python',
     languageColor: '#3572A5', // Cor Python
     metadata: [
-        { icon: Star, value: 543, label: 'Estrelas' },
-        { icon: GitBranch, value: 12, label: 'Forks' },
+      { icon: Star, value: 543, label: 'Estrelas' },
+      { icon: GitBranch, value: 12, label: 'Forks' },
     ],
   },
 };

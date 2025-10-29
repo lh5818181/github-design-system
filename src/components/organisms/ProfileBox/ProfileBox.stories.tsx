@@ -4,7 +4,12 @@ import { MapPin, Mail, Link as LinkIcon } from 'lucide-react';
 
 const mockMetadata = [
   { icon: MapPin, value: 'Recife, PE, Brazil' },
-  { icon: Mail, value: 'contato.leandrolopes@outlook.com', isLink: true, href: 'mailto:contato.leandrolopes@outlook.com' },
+  {
+    icon: Mail,
+    value: 'contato.leandrolopes@outlook.com',
+    isLink: true,
+    href: 'mailto:contato.leandrolopes@outlook.com',
+  },
   { icon: LinkIcon, value: 'd3vlopes.dev', isLink: true, href: 'https://d3vlopes.dev' },
 ];
 
@@ -21,7 +26,7 @@ const meta: Meta<ProfileBoxProps> = {
     followingCount: 32,
     primaryAction: {
       label: 'Edit profile',
-      onClick: () => alert('Abrir modal de edição')
+      onClick: () => alert('Abrir modal de edição'),
     },
     metadata: mockMetadata,
   },
@@ -43,13 +48,13 @@ export const Default: Story = {};
 
 // 2. Box com Ação de Seguir (Exemplo para perfil de terceiros)
 export const ExternalProfile: Story = {
-    args: {
-        primaryAction: {
-            label: 'Follow',
-            onClick: () => alert('Seguindo usuário')
-        },
-        fullName: 'Jane Doe',
-        username: 'janedoe',
-        bio: 'Tech lead em Design Systems. Criadora de componentes elegantes e acessíveis.',
-    }
+  args: {
+    primaryAction: {
+      label: 'Follow',
+      onClick: () => alert('Seguindo usuário'),
+    },
+    fullName: 'Jane Doe',
+    username: 'janedoe',
+    bio: 'Tech lead em Design Systems. Criadora de componentes elegantes e acessíveis.',
+  },
 };

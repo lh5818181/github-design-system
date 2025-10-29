@@ -23,7 +23,7 @@ export const AllSizes: Story = {
       <Spinner size="medium" aria-label="Medium Spinner" />
       <Spinner size="large" aria-label="Large Spinner" />
     </div>
-  )
+  ),
 };
 
 // 2. Com Cor Customizada (Ex: Vermelho de Erro)
@@ -31,5 +31,5 @@ export const CustomColor: Story = {
   args: {
     size: 'large',
     color: '#cf222e', // Vermelho do GitHub (Error)
-  }
+  },
 };

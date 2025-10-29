@@ -19,26 +19,21 @@ export type AlertProps = {
   /** Conteúdo da mensagem. */
   children: React.ReactNode;
   /** Se true, mostra um botão para fechar o alerta. */
-  isDismissible?: boolean; 
+  isDismissible?: boolean;
   /** Função de callback ao fechar o alerta. */
   onDismiss?: () => void;
 } & HTMLAttributes<HTMLDivElement>;
 
-export const Alert = ({ 
-  variant = 'info', 
-  children, 
+export const Alert = ({
+  variant = 'info',
+  children,
   isDismissible = false,
   onDismiss,
-  className, 
-  ...props 
+  className,
+  ...props
 }: AlertProps) => {
-  
-  const alertClasses = [
-    styles.alert,
-    styles[variant],
-    className,
-  ].join(' ').trim();
-  
+  const alertClasses = [styles.alert, styles[variant], className].join(' ').trim();
+
   const AlertIcon = iconMap[variant];
 
   return (
@@ -46,11 +41,9 @@ export const Alert = ({
       <span className={styles.iconWrapper}>
         <Icon icon={AlertIcon} size="medium" ariaLabel={`${variant} status`} />
       </span>
-      
-      <div className={styles.content}>
-        {children}
-      </div>
-      
+
+      <div className={styles.content}>{children}</div>
+
       {isDismissible && onDismiss && (
         <button className={styles.dismissButton} onClick={onDismiss} aria-label="Fechar alerta">
           <Icon icon={X} size="small" ariaLabel="Fechar" />

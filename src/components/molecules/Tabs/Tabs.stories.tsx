@@ -1,7 +1,7 @@
 // eslint-disable-next-line storybook/no-renderer-packages
 import { Meta, StoryObj } from '@storybook/react';
 import { Tabs, TabsProps, TabItem } from '.';
-import { Code, GitPullRequest, AlertTriangle, MessageSquare } from 'lucide-react'; 
+import { Code, GitPullRequest, AlertTriangle, MessageSquare } from 'lucide-react';
 
 const mockItems: TabItem[] = [
   { id: 'code', label: 'Code', icon: Code, href: '#code', isActive: true },
@@ -28,8 +28,8 @@ export const Default: Story = {};
 
 // 2. Com Ação de Click (Simulando uma navegação em SPA)
 export const WithClickAction: Story = {
-    args: {
-        items: mockItems,
-        onTabClick: (id) => alert(`Navegando para a aba: ${id}`),
-    },
+  args: {
+    items: mockItems,
+    onTabClick: (id) => alert(`Navegando para a aba: ${id}`),
+  },
 };

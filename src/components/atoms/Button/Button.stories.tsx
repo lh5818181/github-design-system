@@ -4,26 +4,25 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '.';
 
 const meta: Meta<typeof Button> = {
-    title: 'atoms/Button',
-    component: Button,
-    args: {
-        children: 'Button',
-        variant: 'secondary',
-    },
-}; 
+  title: 'atoms/Button',
+  component: Button,
+  args: {
+    children: 'Button',
+    variant: 'secondary',
+  },
+};
 
 export default meta;
 
 type Story = StoryObj<typeof Button>;
 
 const template: Story = {
-    render: (args) => <Button {...args} />,
+  render: (args) => <Button {...args} />,
 };
 
 export const Default: Story = {
-    ...template,
+  ...template,
 };
-
 
 export const Primary: Story = {
   ...template,

@@ -8,7 +8,7 @@ const meta: Meta<AlertProps> = {
   argTypes: {
     variant: { control: 'select', options: ['success', 'error', 'warning', 'info'] },
     isDismissible: { control: 'boolean' },
-    onDismiss: { action: 'dismissed' }
+    onDismiss: { action: 'dismissed' },
   },
 };
 
@@ -35,5 +35,5 @@ export const AllVariations: Story = {
   ),
   args: {
     // onDismiss é usado no render para mostrar a funcionalidade
-  }
+  },
 };

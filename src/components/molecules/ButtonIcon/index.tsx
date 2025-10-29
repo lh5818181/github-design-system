@@ -14,15 +14,8 @@ export interface ButtonIconProps {
   isMany?: boolean;
 }
 
-export const ButtonIcon = ({
-  icon = IconType.HAMBURGER,
-  isMany = false,
-}: ButtonIconProps) => {
+export const ButtonIcon = ({ icon = IconType.HAMBURGER, isMany = false }: ButtonIconProps) => {
   const classNames = `${styles.wrapper} ${isMany ? styles.large : ''}`;
 
-  return (
-    <div className={classNames}>
-      {isMany ? renderManyIcons() : renderSingleIcon(icon)}
-    </div>
-  );
+  return <div className={classNames}>{isMany ? renderManyIcons() : renderSingleIcon(icon)}</div>;
 };

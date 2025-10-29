@@ -1,4 +1,3 @@
-
 .container {
   padding: 16px 32px;
   background-color: var(--color-bg-repo-header, #f6f8fa); // Um cinza claro de fundo
@@ -52,7 +51,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  
+
   /* Garante que o texto do botão fique visível se o Badge existir */
   .actionLabel {
     margin-right: 4px;

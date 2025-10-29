@@ -13,26 +13,24 @@ export type HeadingProps = {
   noMargin?: boolean;
 } & HTMLAttributes<HTMLHeadingElement>;
 
-export const Heading = ({ 
+export const Heading = ({
   level: Component = 'h2', // Alias 'level' para 'Component' que será a tag HTML
-  children, 
+  children,
   noMargin = false,
-  className, 
-  ...props 
+  className,
+  ...props
 }: HeadingProps) => {
-
   // A classe CSS é gerada com base no nível (ex: styles.h1, styles.h2)
   const headingClasses = [
     styles[Component], // Classe específica para o tamanho (ex: h1, h2)
     noMargin ? styles.noMargin : '',
     className,
-  ].join(' ').trim();
+  ]
+    .join(' ')
+    .trim();
 
   return (
-    <Component 
-      className={headingClasses} 
-      {...props}
-    >
+    <Component className={headingClasses} {...props}>
       {children}
     </Component>
   );

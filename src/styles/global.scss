@@ -1,25 +1,24 @@
 @use 'design-tokens/fonts/index.scss' as fonts;
 @use 'design-tokens/colors/index.scss' as colors;
 
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    color: var(--fg-default);
-    background-color: var(--bg-default);
-    font-family: sans-serif;
+  color: var(--fg-default);
+  background-color: var(--bg-default);
+  font-family: sans-serif;
 }
 
 button {
-    cursor: pointer;
-    border: none;
+  cursor: pointer;
+  border: none;
 }
 
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }

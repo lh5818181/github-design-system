@@ -1,9 +1,13 @@
-
 import { MapPin, Mail, Link as LinkIcon } from 'lucide-react';
 
 const mockMetadata = [
   { icon: MapPin, value: 'Recife, PE, Brazil' },
-  { icon: Mail, value: 'contato.leandrolopes@outlook.com', isLink: true, href: 'mailto:contato.leandrolopes@outlook.com' },
+  {
+    icon: Mail,
+    value: 'contato.leandrolopes@outlook.com',
+    isLink: true,
+    href: 'mailto:contato.leandrolopes@outlook.com',
+  },
   { icon: LinkIcon, value: 'd3vlopes.dev', isLink: true, href: 'https://d3vlopes.dev' },
 ];
 
@@ -17,8 +21,8 @@ export const mockData = {
     followingCount: 32,
     primaryAction: {
       label: 'Edit profile',
-      onClick: () => console.log('Edit profile clicked')
+      onClick: () => console.log('Edit profile clicked'),
     },
     metadata: mockMetadata,
-  }
+  },
 };

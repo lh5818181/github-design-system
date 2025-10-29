@@ -9,31 +9,25 @@ export type LinkProps = {
   /** Variação de estilo do Link. Padrão é 'default' (azul). */
   variant?: LinkVariant;
   /** Se true, o link não terá nenhum estilo de link (parece texto normal, mas é clicável). */
-  unstyled?: boolean; 
+  unstyled?: boolean;
   /** Conteúdo do link. */
   children: React.ReactNode;
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-export const Link = ({ 
-  variant = 'default', 
-  unstyled = false, 
-  children, 
-  className, 
-  ...props 
+export const Link = ({
+  variant = 'default',
+  unstyled = false,
+  children,
+  className,
+  ...props
 }: LinkProps) => {
-  
   // Combina as classes CSS
-  const linkClasses = [
-    styles.link,
-    !unstyled ? styles[variant] : styles.unstyled,
-    className,
-  ].join(' ').trim();
+  const linkClasses = [styles.link, !unstyled ? styles[variant] : styles.unstyled, className]
+    .join(' ')
+    .trim();
 
   return (
-    <a 
-      className={linkClasses}
-      {...props}
-    >
+    <a className={linkClasses} {...props}>
       {children}
     </a>
   );

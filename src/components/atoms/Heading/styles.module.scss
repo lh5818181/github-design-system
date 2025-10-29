@@ -1,6 +1,10 @@
-
 // Reset básico para garantir que o componente controla o estilo
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: inherit; // Mantém a fonte do projeto
   font-weight: 600; // Peso semi-bold é comum
   margin-top: 0;
@@ -12,7 +16,7 @@
 .h1 {
   font-size: 32px;
   // Cor do título principal no GitHub (quase preto)
-  color: var(--color-heading-primary, #24292f); 
+  color: var(--color-heading-primary, #24292f);
 }
 
 .h2 {

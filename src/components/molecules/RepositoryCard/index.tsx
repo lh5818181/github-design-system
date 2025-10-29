@@ -1,8 +1,8 @@
 import styles from './styles.module.scss';
 import { Heading } from '../../atoms/Heading'; // Importa o Átomo Heading
-import { Link } from '../../atoms/Link';       // Importa o Átomo Link
-import { Badge } from '../../atoms/Badge';     // Importa o Átomo Badge
-import { Icon } from '../../atoms/Icon';       // Importa o Átomo Icon
+import { Link } from '../../atoms/Link'; // Importa o Átomo Link
+import { Badge } from '../../atoms/Badge'; // Importa o Átomo Badge
+import { Icon } from '../../atoms/Icon'; // Importa o Átomo Icon
 import { Lock, Globe, LucideIcon } from 'lucide-react'; // Ícones de exemplo
 
 // Interface para os metadados (estrelas, forks, linguagem)
@@ -39,7 +39,6 @@ export const RepositoryCard = ({
   metadata,
   isPrivate = false,
 }: RepositoryCardProps) => {
-
   // Ícone de status (Privado/Público)
   const StatusIcon = isPrivate ? Lock : Globe;
   const statusText = isPrivate ? 'Private' : 'Public';
@@ -49,12 +48,17 @@ export const RepositoryCard = ({
       <header className={styles.header}>
         {/* Título do Repositório (usando Heading e Link) */}
         <Heading level="h3" noMargin className={styles.titleWrapper}>
-          <Icon icon={StatusIcon} size="small" ariaLabel={statusText} className={styles.statusIcon} />
+          <Icon
+            icon={StatusIcon}
+            size="small"
+            ariaLabel={statusText}
+            className={styles.statusIcon}
+          />
           <Link href={url} variant="default" className={styles.repoLink}>
             {name}
           </Link>
         </Heading>
-        
+
         {/* Badge de Status (Público/Privado) */}
         <Badge variant={isPrivate ? 'secondary' : 'default'} className={styles.statusBadge}>
           {statusText}
@@ -62,25 +66,30 @@ export const RepositoryCard = ({
       </header>
 
       {/* Descrição */}
-      <p className={styles.description}>
-        {description}
-      </p>
+      <p className={styles.description}>{description}</p>
 
       {/* Metadados (Linguagem, Estrelas, Forks) */}
       <footer className={styles.footer}>
         {/* Linguagem Principal */}
         <div className={styles.metadataItem}>
-          <span className={styles.languageColor} style={{ backgroundColor: languageColor }} aria-hidden="true" />
+          <span
+            className={styles.languageColor}
+            style={{ backgroundColor: languageColor }}
+            aria-hidden="true"
+          />
           <span className={styles.metadataText}>{language}</span>
         </div>
 
         {/* Outros Metadados (Estrelas, Forks) */}
         {metadata.map((item, index) => (
           <div key={index} className={styles.metadataItem}>
-            <Icon icon={item.icon} size="small" ariaLabel={item.label} className={styles.metadataIcon} />
-            <span className={styles.metadataText}>
-              {item.value}
-            </span>
+            <Icon
+              icon={item.icon}
+              size="small"
+              ariaLabel={item.label}
+              className={styles.metadataIcon}
+            />
+            <span className={styles.metadataText}>{item.value}</span>
           </div>
         ))}
       </footer>

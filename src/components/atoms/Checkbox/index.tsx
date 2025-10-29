@@ -14,15 +14,14 @@ export type CheckboxProps = {
   disabled?: boolean;
 } & InputHTMLAttributes<HTMLInputElement>; // Herda props de input (checked, onChange, etc.)
 
-export const Checkbox = ({ 
+export const Checkbox = ({
   label,
   styleType = 'checkbox',
   disabled = false,
-  id, 
+  id,
   className,
-  ...props 
+  ...props
 }: CheckboxProps) => {
-
   // Se o ID não for fornecido, cria um ID único para associar label e input
   const generatedId = id || `checkbox-${Math.random().toString(36).substring(2, 9)}`;
 
@@ -31,7 +30,9 @@ export const Checkbox = ({
     styles[styleType], // Aplica estilo: checkbox ou toggle
     disabled ? styles.disabled : '',
     className,
-  ].join(' ').trim();
+  ]
+    .join(' ')
+    .trim();
 
   return (
     <div className={containerClasses}>
@@ -42,10 +43,10 @@ export const Checkbox = ({
         disabled={disabled}
         {...props}
       />
-      
+
       {/* O elemento visual que customizamos */}
-      <span className={styles.checkMark} aria-hidden="true" /> 
-      
+      <span className={styles.checkMark} aria-hidden="true" />
+
       {/* O Label, usando o Átomo Text */}
       <label htmlFor={generatedId} className={styles.label}>
         <Text asSpan size="medium">

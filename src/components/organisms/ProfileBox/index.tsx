@@ -1,12 +1,12 @@
 import React, { HTMLAttributes } from 'react';
 import styles from './styles.module.scss';
-import { Avatar } from 'src/components/atoms/Avatar';     // Assumido existir
-import { Heading } from 'src/components/atoms/Heading';     // Assumido existir
-import { Text } from 'src/components/atoms/Text';           // Assumido existir
-import { Button } from 'src/components/atoms/Button';       // Assumido existir
-import { Icon } from 'src/components/atoms/Icon';           // Assumido existir
-import { Link } from 'src/components/atoms/Link';           // Assumido existir
-import { Users, MapPin, Mail, Link as LinkIcon } from 'lucide-react'; // Ícones
+import { Avatar } from '../../atoms/Avatar';     
+import { Heading } from '../../atoms/Heading';     
+import { Text } from '../../atoms/Text';           
+import { Button } from '../../atoms/Button';       
+import { Icon } from '../../atoms/Icon';           
+import { Link } from '../../atoms/Link';           
+import { Users, MapPin, Mail, Link as LinkIcon, LucideIcon } from 'lucide-react'; // Ícones
 
 // Interface para os metadados do perfil (Localização, Email, Link)
 export type ProfileMetaData = {

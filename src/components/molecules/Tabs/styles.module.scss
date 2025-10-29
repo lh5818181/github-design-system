@@ -30,17 +30,17 @@
   border-color: var(--color-border-default, #d0d7de);
   border-top: 3px solid var(--color-tab-active-border, #f78166); // Linha laranja do GitHub
   background-color: var(--color-bg-active, #ffffff);
-  
+
   // Como a borda superior é grossa, movemos a tab para baixo para compensar
-  transform: translateY(1px); 
+  transform: translateY(1px);
 }
 
 .iconWrapper {
   display: flex;
   margin-right: 8px;
   // A cor do ícone no GitHub geralmente muda para azul/laranja na aba ativa
-  color: var(--color-icon-default, #57606a); 
-  
+  color: var(--color-icon-default, #57606a);
+
   .active & {
     color: var(--color-text-active, #24292f);
   }

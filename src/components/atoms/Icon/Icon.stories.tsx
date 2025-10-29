@@ -1,7 +1,7 @@
 // eslint-disable-next-line storybook/no-renderer-packages
 import { Meta, StoryObj } from '@storybook/react';
 import { Icon, IconProps } from '.';
-import { Star, Code, AlertCircle, ArrowRight } from 'lucide-react'; 
+import { Star, Code, AlertCircle, ArrowRight } from 'lucide-react';
 
 const meta: Meta<IconProps> = {
   title: 'atoms/Icon',
@@ -41,7 +41,13 @@ export const Variations: Story = {
 
       <h4>Cores</h4>
       <div style={{ display: 'flex', gap: '16px' }}>
-        <Icon {...args} icon={AlertCircle} size="large" color="#cf222e" ariaLabel="Ícone Alerta Vermelho" />
+        <Icon
+          {...args}
+          icon={AlertCircle}
+          size="large"
+          color="#cf222e"
+          ariaLabel="Ícone Alerta Vermelho"
+        />
         <Icon {...args} icon={Star} size="large" color="#0969da" ariaLabel="Ícone Estrela Azul" />
       </div>
     </div>
@@ -55,6 +61,6 @@ export const Clickable: Story = {
     ariaLabel: 'Próxima Etapa',
     size: 'large',
     onClick: () => alert('Ícone Clicado!'),
-    style: { cursor: 'pointer' }
+    style: { cursor: 'pointer' },
   },
 };

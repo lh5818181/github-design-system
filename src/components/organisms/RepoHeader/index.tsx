@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import { Heading } from '../../atoms/Heading';     
-import { Badge } from '../../atoms/Badge';         
-import { Button } from '../../atoms/Button';       
-import { Tabs, TabItem } from '../../molecules/Tabs'; 
-import { Icon } from '../../atoms/Icon';           
+import { Heading } from '../../atoms/Heading';
+import { Badge } from '../../atoms/Badge';
+import { Button } from '../../atoms/Button';
+import { Tabs, TabItem } from '../../molecules/Tabs';
+import { Icon } from '../../atoms/Icon';
 import { Code, Lock, LucideIcon } from 'lucide-react'; // Ícones
 
 // Estrutura para os botões de ação (Star, Fork, Watch)
@@ -39,7 +39,6 @@ export const RepoHeader = ({
   actions,
   tabs,
 }: RepoHeaderProps) => {
-  
   const statusText = isPrivate ? 'Private' : 'Public';
 
   return (
@@ -47,11 +46,17 @@ export const RepoHeader = ({
       {/* Linha 1: Título e Status */}
       <div className={styles.titleSection}>
         <div className={styles.repoIdentity}>
-          <Icon icon={isPrivate ? Lock : Code} size="large" ariaLabel={statusText} className={styles.icon} />
-          
+          <Icon
+            icon={isPrivate ? Lock : Code}
+            size="large"
+            ariaLabel={statusText}
+            className={styles.icon}
+          />
+
           <Heading level="h1" noMargin className={styles.repoTitle}>
             {/* Link para o Owner (usando um Link simples) */}
-            <span className={styles.ownerName}>{owner}</span> / <span className={styles.repoName}>{repoName}</span>
+            <span className={styles.ownerName}>{owner}</span> /{' '}
+            <span className={styles.repoName}>{repoName}</span>
           </Heading>
 
           {/* Badge de Status */}
@@ -59,13 +64,13 @@ export const RepoHeader = ({
             {statusText}
           </Badge>
         </div>
-        
+
         {/* Botões de Ação (Star, Fork, etc.) */}
         <div className={styles.actionButtons}>
           {actions.map((action, index) => (
-            <Button 
-              key={index} 
-              onClick={action.onClick} 
+            <Button
+              key={index}
+              onClick={action.onClick}
               variant={action.variant || 'secondary'}
               className={styles.actionButton}
             >
@@ -78,11 +83,9 @@ export const RepoHeader = ({
           ))}
         </div>
       </div>
-      
+
       {/* Linha 2: Descrição */}
-      <p className={styles.description}>
-        {description}
-      </p>
+      <p className={styles.description}>{description}</p>
 
       {/* Linha 3: Tabs de Navegação */}
       <div className={styles.tabsSection}>

@@ -17,7 +17,7 @@ export type TabsProps = {
   /** Array de objetos que representam as abas. */
   items: TabItem[];
   /** Função de callback ao clicar em uma aba (opcional, para navegação SPA). */
-  onTabClick?: (id: string) => void; 
+  onTabClick?: (id: string) => void;
 };
 
 export const Tabs = ({ items, onTabClick }: TabsProps) => {
@@ -34,26 +34,20 @@ export const Tabs = ({ items, onTabClick }: TabsProps) => {
             }
           }}
           // Usa 'unstyled' para que o link não tenha estilo padrão e possamos aplicar o estilo da aba
-          unstyled 
+          unstyled
           className={[styles.tab, item.isActive ? styles.active : ''].join(' ').trim()}
         >
           {item.icon && (
             <span className={styles.iconWrapper}>
               {/* Renderiza o Ícone (Átomo) */}
-              <Icon 
-                icon={item.icon} 
-                size="small" 
-                ariaLabel={`Navegar para ${item.label}`}
-              />
+              <Icon icon={item.icon} size="small" ariaLabel={`Navegar para ${item.label}`} />
             </span>
           )}
-          
+
           <span className={styles.label}>{item.label}</span>
-          
+
           {item.count !== undefined && item.count > 0 && (
-            <span className={styles.count}>
-              {item.count}
-            </span>
+            <span className={styles.count}>{item.count}</span>
           )}
         </Link>
       ))}

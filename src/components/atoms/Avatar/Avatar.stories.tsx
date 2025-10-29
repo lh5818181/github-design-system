@@ -39,7 +39,7 @@ export const Sizes: Story = {
   ),
   args: {
     src: EXAMPLE_IMAGE_URL,
-  }
+  },
 };
 
 // 3. Avatar com Destaque (Highlight)

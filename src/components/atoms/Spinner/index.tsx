@@ -11,25 +11,15 @@ export type SpinnerProps = {
   color?: string;
 } & HTMLAttributes<HTMLDivElement>;
 
-export const Spinner = ({ 
-  size = 'medium', 
-  color,
-  className, 
-  ...props 
-}: SpinnerProps) => {
-  
-  const spinnerClasses = [
-    styles.spinner,
-    styles[size],
-    className,
-  ].join(' ').trim();
-  
+export const Spinner = ({ size = 'medium', color, className, ...props }: SpinnerProps) => {
+  const spinnerClasses = [styles.spinner, styles[size], className].join(' ').trim();
+
   // O estilo 'color' é passado diretamente para permitir customização via prop
   const spinnerStyle = color ? { borderTopColor: color, borderLeftColor: color } : {};
 
   return (
-    <div 
-      className={spinnerClasses} 
+    <div
+      className={spinnerClasses}
       style={spinnerStyle}
       role="status" // Para acessibilidade
       aria-label="Carregando"

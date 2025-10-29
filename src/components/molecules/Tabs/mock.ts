@@ -8,5 +8,5 @@ export const mockData = {
       { id: 'pulls', label: 'Pull Requests', icon: GitPullRequest, href: '#pulls', count: 1 },
       { id: 'discussions', label: 'Discussions', icon: MessageSquare, href: '#discussions' },
     ],
-  }
+  },
 };

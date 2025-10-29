@@ -1,0 +1,50 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    // Configurações básicas de ESLint
+    "eslint:recommended",
+    
+    // Suporte a TypeScript
+    "plugin:@typescript-eslint/recommended",
+    
+    // Suporte a React (JSX)
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    
+    // Desativa regras do ESLint que conflitam com o Prettier
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "rules": {
+    // Regras de Formatação (Prettier cuida disso, mas adicionamos o plugin)
+    "prettier/prettier": "error",
+    
+    // Ajustes comuns em projetos React/TS
+    "react/react-in-jsx-scope": "off", // Necessário para React 17+
+    "react/prop-types": "off", // TypeScript já faz essa validação
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Permite inferência em alguns casos
+    "@typescript-eslint/no-explicit-any": "off", // Útil em mocks
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }] // Ignora variáveis que começam com _
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Detecta a versão do React instalada
+    }
+  }
+}

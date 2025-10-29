@@ -33,7 +33,7 @@ export const AllLevels: Story = {
   ),
   args: {
     noMargin: false,
-  }
+  },
 };
 
 // Variação de exemplo de uso
@@ -42,5 +42,5 @@ export const H3WithNoMargin: Story = {
     level: 'h3',
     children: 'Título Sem Margem Abaixo',
     noMargin: true,
-  }
+  },
 };

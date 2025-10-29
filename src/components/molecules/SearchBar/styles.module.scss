@@ -1,0 +1,82 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0 12px;
+  height: 30px;
+  transition: width 0.3s ease, background-color 0.1s;
+  
+  // Cores padrão no header do GitHub (tema claro)
+  background-color: var(--color-bg-search, #ffffff);
+  border: 1px solid var(--color-border-search, #8e949c);
+  color: var(--color-text-default, #24292f);
+}
+
+.input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0 8px;
+  font-size: 14px;
+  color: inherit;
+  width: 100%; // Ocupa o espaço disponível
+  
+  &::placeholder {
+    color: var(--color-text-secondary, #57606a);
+    opacity: 0.8;
+  }
+}
+
+.searchIcon {
+  color: var(--color-icon-secondary, #57606a);
+}
+
+.shortcut {
+  margin-left: 8px;
+  flex-shrink: 0;
+  
+  // Estilo visual da tecla "/" (fundo cinza e texto em caixa)
+  background-color: var(--color-bg-shortcut, #eaeef2);
+  border: 1px solid var(--color-border-shortcut, #d0d7de);
+  border-radius: 4px;
+  padding: 0 4px;
+  line-height: 1;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  
+  span {
+    // Garante que o texto do Átomo Text seja estilizado como atalho
+    color: var(--color-text-shortcut, #656d76) !important; 
+    font-size: 12px !important; 
+  }
+}
+
+// --- Variações de Tamanho/Estado ---
+
+// Estado Padrão (Colapsado) - No Header, geralmente é menor
+.collapsed {
+  width: 200px; 
+}
+
+// Estado Expandido (Focado) - Ocupa mais espaço
+.expanded {
+  width: 300px;
+  border-color: var(--color-border-active, #0969da);
+  
+  // Esconde o atalho quando expandido/focado (comportamento GitHub)
+  .shortcut {
+    display: none;
+  }
+}
+
+// Comportamento ao Focar (para simular a expansão caso o isExpanded não seja usado)
+.searchBar:focus-within:not(.expanded) {
+  width: 300px;
+  border-color: var(--color-border-active, #0969da);
+
+  .shortcut {
+    display: none;
+  }
+}

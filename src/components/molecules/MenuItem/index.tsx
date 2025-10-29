@@ -13,12 +13,7 @@ export interface MenuItemProps {
   count?: number;
 }
 
-export const MenuItem = ({
-  label,
-  icon,
-  count,
-  isBadge = false,
-}: MenuItemProps) => {
+export const MenuItem = ({ label, icon, count, isBadge = false }: MenuItemProps) => {
   return (
     <div className={styles.wrapper}>
       <Image {...icon} />

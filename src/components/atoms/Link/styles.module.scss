@@ -2,7 +2,7 @@
 .link {
   text-decoration: none; // Remove o sublinhado padrão
   cursor: pointer;
-  
+
   &:hover {
     text-decoration: underline; // Adiciona sublinhado no hover, padrão do GitHub
   }
@@ -10,7 +10,7 @@
 
 // Variação Padrão (Azul Principal)
 .default {
-  color: var(--color-link-default, #0969da); 
+  color: var(--color-link-default, #0969da);
 
   &:hover {
     color: var(--color-link-hover, #044b9b); // Um tom mais escuro no hover
@@ -20,16 +20,19 @@
 // Variação Muted (Usada para descrições, metadados)
 .muted {
   color: var(--color-link-muted, #57606a); // Cinza
-  
+
   &:hover {
-    color: var(--color-link-default, #0969da); // Muda para azul no hover para indicar interatividade
+    color: var(
+      --color-link-default,
+      #0969da
+    ); // Muda para azul no hover para indicar interatividade
   }
 }
 
 // Variação Danger (links de "Delete", "Remove")
 .danger {
   color: var(--color-link-danger, #cf222e);
-  
+
   &:hover {
     color: var(--color-link-danger-hover, #9c1c27);
   }
@@ -38,7 +41,7 @@
 // Link sem Estilo (apenas clicável, mas parece texto normal)
 .unstyled {
   color: inherit; // Herda a cor do texto pai
-  
+
   &:hover {
     text-decoration: none; // Não sublinha no hover
   }

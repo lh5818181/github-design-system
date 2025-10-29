@@ -10,19 +10,19 @@ const mockTabs = [
 ];
 
 const mockActions = [
-  { 
-    label: 'Watch', 
-    icon: Star, 
-    count: 35, 
+  {
+    label: 'Watch',
+    icon: Star,
+    count: 35,
     onClick: () => alert('Watching!'),
-    variant: 'secondary' as const
+    variant: 'secondary' as const,
   },
-  { 
-    label: 'Fork', 
-    icon: GitBranch, 
-    count: 10, 
+  {
+    label: 'Fork',
+    icon: GitBranch,
+    count: 10,
     onClick: () => alert('Forking...'),
-    variant: 'secondary' as const
+    variant: 'secondary' as const,
   },
 ];
 
@@ -34,14 +34,15 @@ const meta: Meta<RepoHeaderProps> = {
     owner: 'd3vlopes',
     repoName: 'github-design-system',
     isPrivate: false,
-    description: 'Um projeto de código aberto para recriar os componentes base do GitHub usando React, Storybook e Atomic Design.',
+    description:
+      'Um projeto de código aberto para recriar os componentes base do GitHub usando React, Storybook e Atomic Design.',
     tabs: mockTabs,
     actions: mockActions,
   },
   argTypes: {
     tabs: { control: false },
     actions: { control: false },
-  }
+  },
 };
 
 export default meta;
