@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, Controls, Source } from '@storybook/addon-docs';
+import { Button } from './';
+import { ChevronRight } from 'lucide-react'; // Exemplo de Icon
+
+<Meta title="atoms/Button/Documentação" component={Button} />
+
+# Button
+
+O `Button` é o elemento principal para iniciar ações, submeter formulários ou navegar para um destino específico. Ele vem em três variantes primárias para comunicar a importância e o impacto da ação.
+
+Sua tipagem suporta tanto a tag `<button>` quanto a tag `<a>` (via prop `href`), tornando-o versátil.
+
+## 💡 Melhores Práticas de Uso
+
+| Faça (Do's) | Não Faça (Don'ts) |
+| :--- | :--- |
+| **Use `primary`** para a ação mais importante em uma tela (ex: "Criar Novo Repositório"). | **Use vários `primary`** na mesma área. Apenas uma ação deve ter o maior destaque. |
+| **Use `secondary`** para ações secundárias ou neutras (ex: "Cancelar", "Voltar"). | **Use `danger`** para ações que não são destrutivas (ex: usar cor vermelha em um botão "Salvar"). |
+| **Use `isLoading`** para desabilitar o botão e fornecer feedback visual quando uma requisição está pendente. | **Use `isDisabled` e `isLoading`** ao mesmo tempo. A prop `isLoading` já implica em desabilitado. |
+
+## 🚀 Variações e Estado
+
+<Canvas>
+  ### Primário, Secundário e Perigo
+  <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
+    <Button variant="primary">Ação Principal</Button>
+    <Button variant="secondary">Ação Secundária</Button>
+    <Button variant="danger">Ação Perigosa</Button>
+  </div>
+
+  ### Com Ícones e Tamanhos
+  <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+    <Button variant="primary" iconLeft={ChevronRight} size="small">Pequeno</Button>
+    <Button variant="secondary" iconLeft={ChevronRight} size="medium">Médio</Button>
+    <Button variant="danger" iconLeft={ChevronRight} size="large">Grande</Button>
+  </div>
+</Canvas>
+
+## ⚙️ Propriedades (Props)
+
+<Controls of={Button} />

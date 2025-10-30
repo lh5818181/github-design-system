@@ -1,5 +1,5 @@
 // eslint-disable-next-line storybook/no-renderer-packages
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Input, InputProps } from '.';
 
 import { Search } from 'lucide-react';

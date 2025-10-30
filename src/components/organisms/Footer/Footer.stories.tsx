@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Footer, FooterProps } from '.';
 
 // Mock dos links de rodapé do GitHub

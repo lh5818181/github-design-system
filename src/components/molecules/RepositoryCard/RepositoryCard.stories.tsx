@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { RepositoryCard, RepositoryCardProps } from '.';
 import { mockData } from './mock';
 import { Star, GitBranch } from 'lucide-react';

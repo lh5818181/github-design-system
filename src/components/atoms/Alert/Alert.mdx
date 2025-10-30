@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs';
+import { Alert } from './';
+
+<Meta title="atoms/Alert/Documentação" component={Alert} />
+
+# Alert
+
+O `Alert` é usado para comunicar feedback importante e não intrusivo ao usuário sobre o resultado de uma ação, status do sistema ou informações cruciais. Deve ser sempre usado com o `role="alert"` (que já está no componente) para acessibilidade.
+
+## 💡 Melhores Práticas de Uso
+
+| Faça (Do's) | Não Faça (Don'ts) |
+| :--- | :--- |
+| **Use `success`** para confirmar que a ação do usuário foi concluída com sucesso (ex: "Configurações salvas"). | **Use `alert` para tudo.** Use `Text` ou `Badge` para informações menos urgentes. |
+| **Use `error`** para feedback de falhas críticas ou erros de validação. | **Use `warning`** para erros que interrompem o fluxo do usuário; nesse caso, use `error`. |
+| **Use `info`** para informações neutras ou instruções (ex: "Lembrete: você precisa verificar seu e-mail."). | **Mantenha o alerta fixo** se ele não for relevante após o usuário lê-lo. Use a prop `isDismissible`. |
+
+## 🚀 Variações de Feedback
+
+<Canvas>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <Alert variant="success">O repositório foi criado com sucesso e está pronto para uso.</Alert>
+    <Alert variant="error">Falha ao carregar os dados. Verifique sua conexão com a API.</Alert>
+    <Alert variant="warning" isDismissible={true}>Atenção: A configuração atual será depreciada na próxima semana.</Alert>
+    <Alert variant="info">Você pode configurar integrações externas na aba 'Settings'.</Alert>
+  </div>
+</Canvas>
+
+## ⚙️ Propriedades (Props)
+
+<Controls of={Alert} />

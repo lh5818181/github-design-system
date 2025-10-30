@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { ProfileBox, ProfileBoxProps } from '.';
 import { MapPin, Mail, Link as LinkIcon } from 'lucide-react';
 

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { IssueList, IssueListProps, IssueFilter } from '.';
 import { mockData as issueMock } from '../../molecules/IssueListItem/mock';
 import { IssueListItemProps } from '../../molecules/IssueListItem';

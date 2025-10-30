@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs';
+import { Tabs } from './';
+import { Code, GitPullRequest, Settings, Issue } from 'lucide-react';
+
+<Meta title="molecules/Tabs/Documentação" component={Tabs} />
+
+# Tabs
+
+O `Tabs` é uma Molécula de navegação que permite ao usuário alternar entre diferentes visualizações ou seções de conteúdo dentro de uma área maior. Ele deve ser usado para organizar conteúdo relacionado, mas distinto.
+
+## 💡 Melhores Práticas de Uso
+
+| Faça (Do's) | Não Faça (Don'ts) |
+| :--- | :--- |
+| **Use para Navegação Principal:** É ideal para navegar entre "Code", "Issues", "Pull Requests" em um repositório. | **Aninhar Tabs:** Evite colocar um componente `Tabs` dentro de outro `Tabs`. Isso confunde a navegação. |
+| **Use `count`** para feedback rápido sobre o número de itens (ex: 5 Issues abertas). | **Usar o contador como primário:** O rótulo (`label`) deve ser o foco; o contador é apenas um detalhe extra. |
+| **Defina `isActive`:** Sempre garanta que uma e apenas uma aba tenha o valor `isActive={true}`. | **Usar como Dropdown:** Se houver mais de 8 abas, considere agrupar algumas ou usar um `Dropdown` para filtros. |
+
+## 🚀 Exemplo de Navegação em Repositório
+
+<Canvas>
+  <Story
+    name="Abas de Repositório"
+    args={{
+      items: [
+        { id: 'code', label: 'Code', icon: Code, href: '#code' },
+        { id: 'issues', label: 'Issues', icon: Issue, href: '#issues', count: 5, isActive: true },
+        { id: 'pulls', label: 'Pull Requests', icon: GitPullRequest, href: '#pulls', count: 2 },
+        { id: 'settings', label: 'Settings', icon: Settings, href: '#settings' },
+      ],
+      onTabClick: (id) => console.log(`Navigating to ${id}`),
+    }}
+  >
+    {(args) => <Tabs {...args} />}
+  </Story>
+</Canvas>
+
+## ⚙️ Propriedades (Props)
+
+<Controls of={Tabs} />

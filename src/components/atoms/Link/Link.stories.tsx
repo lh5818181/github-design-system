@@ -1,5 +1,5 @@
 // eslint-disable-next-line storybook/no-renderer-packages
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Link, LinkProps } from '.';
 
 const meta: Meta<LinkProps> = {

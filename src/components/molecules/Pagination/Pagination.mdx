@@ -1,0 +1,50 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs';
+import { Pagination } from './';
+
+<Meta title="molecules/Pagination/Documentação" component={Pagination} />
+
+// Componente Wrapper para simular o estado
+const PaginationWrapper = (args) => {
+    const [page, setPage] = React.useState(args.currentPage);
+    return (
+        <Pagination 
+            {...args} 
+            currentPage={page} 
+            onPageChange={setPage} 
+        />
+    );
+};
+
+<Meta title="molecules/Pagination/Documentação" component={Pagination} />
+
+# Pagination
+
+O `Pagination` é usado para navegar entre grandes conjuntos de dados (listas de Issues, resultados de pesquisa, etc.). Ele gerencia a exibição dos botões de navegação (Previous/Next) e dos links numéricos, incluindo o uso de reticências (`...`) para páginas intermediárias.
+
+## 💡 Melhores Práticas de Uso
+
+| Faça (Do's) | Não Faça (Don'ts) |
+| :--- | :--- |
+| **Use em Organismos:** Sempre inclua este componente no rodapé de Organismos de listagem (como `IssueList`). | **Ocultar os botões:** Os botões "Previous" e "Next" devem permanecer visíveis, desabilitando-os se a página for a primeira ou a última. |
+| **Passe o Callback:** A função `onPageChange` deve ser usada para acionar a chamada à API para buscar os novos dados. | **Gerenciar o estado internamente:** O componente `Pagination` é **controlado**. O estado (`currentPage` e `totalPages`) deve ser gerenciado pelo componente pai (ex: `IssueList`). |
+
+## 🚀 Exemplo Controlado
+
+Este exemplo simula a navegação controlando a página via um hook de estado no Storybook.
+
+<Canvas>
+  <Story
+    name="Navegação em Listagem"
+    args={{
+      currentPage: 3,
+      totalPages: 20,
+      onPageChange: (page) => console.log(`Going to page ${page}`),
+    }}
+  >
+    {(args) => <PaginationWrapper {...args} />}
+  </Story>
+</Canvas>
+
+## ⚙️ Propriedades (Props)
+
+<Controls of={Pagination} />

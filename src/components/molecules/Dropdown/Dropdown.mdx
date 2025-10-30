@@ -1,0 +1,76 @@
+import { Meta, Story, Canvas, Controls, Source } from '@storybook/addon-docs';
+import { Dropdown } from './';
+import { initialMock } from './mock'; // Assumindo que você tem um mock de dados
+
+<Meta title="molecules/Dropdown/Documentação" component={Dropdown} />
+
+# Dropdown
+
+O `Dropdown` é um componente interativo utilizado para apresentar uma lista de opções de menu em um painel que aparece após a interação com um botão. É ideal para ações contextuais, filtros e menus de navegação secundária.
+
+Sua construção segue o padrão WAI-ARIA Menu Button, garantindo total acessibilidade.
+
+## 💡 Melhores Práticas de Uso
+
+| Faça (Do's) | Não Faça (Don'ts) |
+| :--- | :--- |
+| **Use para Filtros:** Excelente para selecionar opções em listas de Issues ou repositórios (ex: "Labels", "Assignee"). | **Substituir Tabs:** Não use para navegação primária entre seções da página. Use o componente `Tabs`. |
+| **Limite as Opções:** Mantenha a lista de itens entre 5 e 15 opções. Listas muito longas dificultam a escolha do usuário. | **Itens Imediatos:** Não use para iniciar uma ação que poderia ser resolvida com um único `Button` simples. |
+| **Sempre com Rótulo:** Garanta que o `label` do botão seja claro sobre o conteúdo ou a ação do menu. | **Itens sem Callback:** Cada `DropdownItem` deve ter uma função `onClick` definida. |
+
+## 🚀 Exemplo Básico
+
+O `Dropdown` é controlado pelo array de `items`.
+
+<Canvas>
+  <Story
+    name="Dropdown Simples"
+    args={{
+      label: 'Filtros Rápidos',
+      items: initialMock.items,
+      alignRight: false
+    }}
+  >
+    {(args) => <Dropdown {...args} />}
+  </Story>
+</Canvas>
+
+## 📏 Variação de Alinhamento
+
+É comum usar o alinhamento à direita (`alignRight`) quando o `Dropdown` está posicionado próximo à borda direita do container, como no cabeçalho de uma lista.
+
+<Canvas>
+  <Story
+    name="Alinhamento à Direita"
+    args={{
+      label: 'Ações do Usuário',
+      items: initialMock.items,
+      alignRight: true
+    }}
+    style={{ display: 'flex', justifyContent: 'flex-end', padding: '20px' }}
+  >
+    {(args) => <Dropdown {...args} />}
+  </Story>
+</Canvas>
+
+## ⚙️ Propriedades (Props)
+
+Os tipos de propriedades são definidos rigorosamente para garantir a usabilidade do componente.
+
+<Controls />
+
+### Estrutura do Item (`DropdownItem`)
+
+O array `items` usa a seguinte interface:
+
+```typescript
+type DropdownItem = {
+  /** Valor único do item. */
+  id: string;
+  /** Texto exibido no menu. */
+  label: string;
+  /** Se true, o item está marcado como selecionado (visível o ícone de check). */
+  isSelected?: boolean;
+  /** Callback chamado ao clicar no item. */
+  onClick: (id: string) => void;
+};  
