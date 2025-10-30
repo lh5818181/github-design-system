@@ -1,26 +1,70 @@
 
-.pageWrapper {
+.pagination {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: var(--color-bg-default, #ffffff);
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  gap: 8px; // Espaço entre os botões de controle
 }
 
-// Container para o RepoHeader (garante largura total da tela, mas com padding lateral)
-.repoContainer {
-  background-color: var(--color-bg-subtle, #f6f8fa); 
-  border-bottom: 1px solid var(--color-border-default, #d0d7de);
-  padding: 0 16px; // Padding lateral para telas pequenas
+.pageButton {
+  // Ajustes de estilo do botão para paginação
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-// Container para o conteúdo principal (centralizado e com largura limitada)
-.mainContent {
-  width: 100%;
-  max-width: 1280px; // Largura limitada do conteúdo principal do GitHub
-  margin: 0 auto;
-  padding: 24px 16px; // Espaçamento interno
+.pageLinks {
+  display: flex;
+  gap: 4px; // Espaço entre os links numéricos
+  margin: 0 8px;
 }
 
-.contentArea {
-  width: 100%;
+.pageLink {
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0 8px;
+  font-size: 14px;
+  font-weight: 500;
+  
+  color: var(--color-text-default, #24292f);
+  background-color: transparent;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: var(--color-bg-subtle, #f6f8fa);
+    border-color: var(--color-border-default, #d0d7de);
+    text-decoration: none;
+  }
+}
+
+.activeLink {
+  // Estilo para a página atual
+  composes: pageLink;
+  font-weight: 600;
+  color: var(--color-text-active, #ffffff); 
+  background-color: var(--color-bg-active, #0969da);
+  border-color: var(--color-bg-active, #0969da);
+  
+  &:hover {
+    // Mantém o estilo ativo no hover
+    color: var(--color-text-active, #ffffff); 
+    background-color: var(--color-bg-active-hover, #0855b8);
+    border-color: var(--color-bg-active-hover, #0855b8);
+  }
+}
+
+.ellipsis {
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: var(--color-text-muted, #57606a);
+  user-select: none;
 }

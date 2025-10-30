@@ -1,74 +1,82 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { RepoTemplate, RepoTemplateProps } from '.';
-import { mockData as issueListMock } from '../../organisms/IssueList/mock';
-import { IssueList } from '../../organisms/IssueList';
-import { Code, AlertTriangle, GitPullRequest } from 'lucide-react';
+import { Pagination, PaginationProps } from '.';
+import React, { useState } from 'react';
 
-// Mock para o RepoHeader
-const mockRepoHeader = {
-  repoName: 'github-design-system',
-  ownerName: 'd3vlopes',
-  isPrivate: false,
-  description: 'Um Design System construído com React e Storybook.',
-  starsCount: 154,
-  forksCount: 32,
-  tabs: [
-    { id: 'code', label: 'Code', icon: Code, href: '#code' },
-    { id: 'issues', label: 'Issues', icon: AlertTriangle, href: '#issues', isActive: true, count: 20 },
-    { id: 'pulls', label: 'Pull requests', icon: GitPullRequest, href: '#pulls', count: 12 },
-  ],
-};
-
-
-const meta: Meta<RepoTemplateProps> = {
-  title: 'templates/RepoTemplate',
-  component: RepoTemplate,
+const meta: Meta<PaginationProps> = {
+  title: 'molecules/Pagination',
+  component: Pagination,
   tags: ['autodocs'],
-  args: {
-    repoHeaderData: mockRepoHeader,
-    // O children será renderizado no Story
+  argTypes: {
+    currentPage: { control: { type: 'range', min: 1, max: 50 } },
+    totalPages: { control: { type: 'number', min: 1 } },
+    onPageChange: { action: 'page changed' },
   },
-  parameters: {
-    layout: 'fullscreen', 
-  }
+  args: {
+    currentPage: 1,
+    totalPages: 15,
+  },
 };
 
 export default meta;
 
-type Story = StoryObj<RepoTemplateProps>;
+type Story = StoryObj<PaginationProps>;
 
-// Exemplo: Página de Issues do Repositório
-export const IssuesPage: Story = {
+// Componente Wrapper para simular o estado controlado
+const ControlledPagination = (props: PaginationProps) => {
+    const [page, setPage] = useState(props.currentPage);
+    
+    // Atualiza o estado interno quando o prop do Storybook muda
+    React.useEffect(() => {
+        setPage(props.currentPage);
+    }, [props.currentPage]);
+
+    const handlePageChange = (newPage: number) => {
+        setPage(newPage);
+        props.onPageChange(newPage);
+    };
+
+    return (
+        <Pagination 
+            {...props}
+            currentPage={page}
+            onPageChange={handlePageChange}
+        />
+    );
+};
+
+
+// 1. Início da Lista (Página 1)
+export const Start: Story = {
+    render: (args) => <ControlledPagination {...args} />,
     args: {
-        repoHeaderData: {
-            ...mockRepoHeader,
-            tabs: mockRepoHeader.tabs.map(tab => ({ 
-                ...tab, 
-                isActive: tab.id === 'issues' 
-            }))
-        },
-        children: (
-            // Renderiza o Organismo IssueList dentro do Template
-            <IssueList {...issueListMock} />
-        )
+        currentPage: 1,
+        totalPages: 15,
     }
 };
 
-// Exemplo: Página de Código (simulando a área do README)
-export const CodePage: Story = {
+// 2. Meio da Lista (Exibindo Elipses)
+export const Middle: Story = {
+    render: (args) => <ControlledPagination {...args} />,
     args: {
-        repoHeaderData: {
-            ...mockRepoHeader,
-            tabs: mockRepoHeader.tabs.map(tab => ({ 
-                ...tab, 
-                isActive: tab.id === 'code' 
-            }))
-        },
-        children: (
-            <div style={{ padding: '32px', border: '1px solid #d0d7de', borderRadius: '6px', backgroundColor: '#ffffff' }}>
-                <h1>README.md</h1>
-                <p>Aqui seria a visualização do código e do README do seu projeto. Todo o layout de página já está definido!</p>
-            </div>
-        )
+        currentPage: 8,
+        totalPages: 20,
+    }
+};
+
+// 3. Fim da Lista (Página 20)
+export const End: Story = {
+    render: (args) => <ControlledPagination {...args} />,
+    args: {
+        currentPage: 20,
+        totalPages: 20,
+    }
+};
+
+// 4. Lista Curta (Sem Elipses)
+export const ShortList: Story = {
+    render: (args) => <ControlledPagination {...args} />,
+    args: {
+        currentPage: 3,
+        totalPages: 5,
     }
 };

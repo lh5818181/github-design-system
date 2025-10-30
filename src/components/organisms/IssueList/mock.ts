@@ -31,4 +31,7 @@ export const mockData: IssueListProps = {
     issues: issuesMock,
     filters: mockFilters,
     newIssueHref: '#new-issue',
+    currentPage: 1,
+    totalPages: 10,
+    onPageChange: (page) => console.log(`Navigating to page ${page}`),
 };

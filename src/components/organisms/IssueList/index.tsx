@@ -2,6 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import styles from './styles.module.scss';
 import { Button } from '../../atoms/Button';             
 import { IssueListItem, IssueListItemProps } from '../../molecules/IssueListItem'; 
+import { Pagination } from '../../molecules/Pagination';
 import { Dropdown, DropdownItem } from '../../molecules/Dropdown'; 
 import { Link } from '../../atoms/Link';             
 import { Text } from '../../atoms/Text';             
@@ -23,6 +24,15 @@ export type IssueListProps = {
   filters: IssueFilter[];
   /** URL para criar uma nova Issue. */
   newIssueHref: string;
+
+
+  /** A página atualmente ativa. */
+  currentPage: number;
+  /** O número total de páginas. */
+  totalPages: number;
+  /** Callback ao mudar de página. */
+  onPageChange: (page: number) => void;
+
 } & HTMLAttributes<HTMLDivElement>;
 
 export const IssueList = ({
@@ -31,6 +41,9 @@ export const IssueList = ({
   issues,
   filters,
   newIssueHref,
+  currentPage,
+  totalPages,
+  onPageChange,
   ...props
 }: IssueListProps) => {
 
@@ -98,13 +111,23 @@ export const IssueList = ({
         )}
       </ul>
       
-      {/* 4. Footer/Paginação (simulado) */}
-      {issues.length > 0 && (
+      {/* 4. Rodapé e Paginação (Atualizado) */}
+      {issues.length > 0 && totalPages > 1 && (
           <div className={styles.footer}>
-              {/* Aqui seria o componente Pagination (próxima pendência) */}
-              <Text size="small" variant="muted">Mostrando 10 de {openCount + closedCount} resultados.</Text>
+              {/* O Organismo IssueList agora usa o componente Pagination */}
+              <Pagination 
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={onPageChange} children={undefined}              />
           </div>
       )}
+      {/* Se houver issues, mas apenas 1 página, exibe a contagem de resultados */}
+      {issues.length > 0 && totalPages <= 1 && (
+         <div className={styles.footer}>
+             <Text size="small" variant="muted">Mostrando {issues.length} de {openCount + closedCount} resultados.</Text>
+         </div>
+      )}
+
     </div>
   );
 };

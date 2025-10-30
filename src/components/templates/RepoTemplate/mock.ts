@@ -1,7 +1,8 @@
-export const mockData = {
-  defaultProps: {
-    // Exemplo de dados mockados para o componente
-    // title: 'Título Mock',
-    // items: ['Item 1', 'Item 2'],
-  }
+
+import { PaginationProps } from '.';
+
+export const mockData: PaginationProps = {
+  currentPage: 1,
+  totalPages: 15,
+  onPageChange: (page) => console.log(`Navigating to page ${page}`)
 };

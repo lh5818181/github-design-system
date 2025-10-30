@@ -1,83 +1,129 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import styles from './styles.module.scss';
-import { RepoHeader, RepoHeaderProps } from '../../organisms/RepoHeader'; // Organismo de Cabeçalho do Repo
-import { Header } from '../../organisms/Header'; // Header Global
-import { BreadcrumbProps } from '../../atoms/Breadcrumb';
-import { Code, AlertTriangle, GitPullRequest } from 'lucide-react';
+import { Button } from '../../atoms/Button';
+import { Icon } from '../../atoms/Icon';
+import { Link } from '../../atoms/Link';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-export type RepoTemplateProps = {
-  /** Propriedades para o Organismo RepoHeader (com o Tabs). */
-  repoHeaderData: RepoHeaderProps;
-  /** Conteúdo principal da página (ex: IssueList, Code Viewer, README). */
-  children: React.ReactNode;
+
+export type PaginationProps = {
+  /** A página atualmente ativa (1-based index). */
+  currentPage: number;
+  /** O número total de páginas. */
+  totalPages: number;
+  /** Callback chamado ao clicar em uma página. */
+  onPageChange: (page: number) => void;
+} & HTMLAttributes<HTMLDivElement>;
+
+const MAX_PAGES_DISPLAYED = 7; // Quantidade máxima de links numéricos visíveis
+
+// Gera a lista de números de página a serem exibidos, com elipses
+const getPageNumbers = (currentPage: number, totalPages: number): (number | '...')[] => {
+  if (totalPages <= MAX_PAGES_DISPLAYED) {
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }
+
+  const pages: (number | '...')[] = [];
+  const startPage = 1;
+  const endPage = totalPages;
+  const delta = 2; // Quantas páginas mostrar ao redor da página atual
+
+  pages.push(startPage);
+  if (currentPage - delta > startPage + 1) {
+    pages.push('...');
+  }
+
+  for (let i = currentPage - delta; i <= currentPage + delta; i++) {
+    if (i > startPage && i < endPage) {
+      pages.push(i);
+    }
+  }
+
+  if (currentPage + delta < endPage - 1) {
+    pages.push('...');
+  }
+  if (endPage !== startPage) {
+    pages.push(endPage);
+  }
+
+  // Remove duplicatas
+  return pages.filter((value, index, self) => self.indexOf(value) === index);
 };
 
-const breadcrumbValue: BreadcrumbProps = {
-  previousPage: {
-    text: 'Previous page',
-    target: '#',
-  },
-  currentPage: {
-    text: 'Current page',
-    target: '#',
-  },
-};
 
-type RepoHeaderAction = {
-  label: string;
-  icon: React.ComponentType<any>;
-  onClick?: () => void;
-  variant?: 'primary' | 'secondary';
-  count?: number;
-};
+export const Pagination = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+  className,
+  ...props
+}: PaginationProps) => {
 
-type MockRepoHeader = Omit<RepoHeaderProps, 'actions'> & {
-  actions: RepoHeaderAction[];
-  starsCount: number;
-  forksCount: number;
-};
+  const pageNumbers = getPageNumbers(currentPage, totalPages);
 
-const mockRepoHeader: MockRepoHeader = {
-  owner: 'd3vlopes',
-  actions: [
-    // Adicione actions aqui...
-  ],
-  repoName: 'github-design-system',
-  isPrivate: false,
-  description: 'Um Design System construído com React e Storybook.',
-  starsCount: 154,
-  forksCount: 32,
-  tabs: [
-    { id: 'code', label: 'Code', icon: Code, href: '#code' },
-    { id: 'issues', label: 'Issues', icon: AlertTriangle, href: '#issues', isActive: true, count: 20 },
-    { id: 'pulls', label: 'Pull requests', icon: GitPullRequest, href: '#pulls', count: 12 },
-  ],
-};
+  const isPrevDisabled = currentPage === 1;
+  const isNextDisabled = currentPage === totalPages;
 
-export const RepoTemplate = ({
-  repoHeaderData,
-  children,
-}: RepoTemplateProps) => {
+  const handlePrev = () => {
+    if (!isPrevDisabled) onPageChange(currentPage - 1);
+  };
+
+  const handleNext = () => {
+    if (!isNextDisabled) onPageChange(currentPage + 1);
+  };
 
   return (
-    <div className={styles.pageWrapper}>
-      {/* 1. Header Global */}
-      {/* Assumindo que o Header já existe e contém a SearchBar */}
-      <Header logoUrl={''} avatarUrl={''} menu={[]} breadcrumb={breadcrumbValue} /> 
+    <nav className={[styles.pagination, className].join(' ').trim()} aria-label="Pagination" {...props}>
+      <Button 
+        onClick={handlePrev}
+        disabled={isPrevDisabled}
+        variant="secondary"
+        size="small"
+        className={styles.pageButton}
+      >
+        <Icon icon={ChevronLeft} size="small" ariaLabel="Previous" />
+        Previous
+      </Button>
 
-      <div className={styles.repoContainer}>
-        {/* 2. Organismo: Cabeçalho do Repositório (Inclui as Tabs) */}
-        <RepoHeader {...repoHeaderData} />
+      <div className={styles.pageLinks}>
+        {pageNumbers.map((page, index) => {
+          if (page === '...') {
+            return (
+              <span key={`elipsis-${index}`} className={styles.ellipsis} aria-hidden="true">
+                ...
+              </span>
+            );
+          }
+
+          const pageNum = page as number;
+          const isActive = pageNum === currentPage;
+          
+          return (
+            <Link
+              key={pageNum}
+              onClick={() => onPageChange(pageNum)}
+              href={`#page-${pageNum}`}
+              className={isActive ? styles.activeLink : styles.pageLink}
+              aria-current={isActive ? 'page' : undefined}
+              variant="default" // Link simples
+              unstyled // Remove o underline
+            >
+              {pageNum}
+            </Link>
+          );
+        })}
       </div>
 
-      <main className={styles.mainContent}>
-        {/* 3. Conteúdo Principal */}
-        <div className={styles.contentArea}>
-          {children}
-        </div>
-      </main>
-      
-      {/* Opcional: Adicionar um Footer aqui (próxima pendência) */}
-    </div>
+      <Button
+        onClick={handleNext}
+        disabled={isNextDisabled}
+        variant="secondary"
+        size="small"
+        className={styles.pageButton}
+      >
+        Next
+        <Icon icon={ChevronRight} size="small" ariaLabel="Next" />
+      </Button>
+    </nav>
   );
 };

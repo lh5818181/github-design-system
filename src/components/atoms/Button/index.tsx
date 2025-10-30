@@ -14,6 +14,8 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   className?: string;
   href?: string;
+  disabled?: boolean;
+  size?: 'small' | 'medium' | 'large';
 }
 
 export const Button = ({ children, variant = 'secondary' }: ButtonProps) => {
