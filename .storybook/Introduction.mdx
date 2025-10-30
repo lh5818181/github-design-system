@@ -1,0 +1,59 @@
+import { Title, Subtitle, Description, Primary, ArgsTable, Stories, DocsContext } from '@storybook/addon-docs';
+import React, { useContext } from 'react';
+
+<Meta title="Introdução/Visão Geral" />
+
+<Title />
+
+## 🚀 Repositorium Design System
+
+<Description>
+O **Repositorium Design System** é a biblioteca de componentes e diretrizes que impulsiona a experiência do usuário, padronizando a interface e a interação para todos os produtos com a temática do GitHub.
+</Description>
+
+<div style={{ padding: '20px 0' }}>
+  <Primary />
+</div>
+
+## ✨ Princípios de Design
+
+Nossos componentes são guiados por três princípios centrais, assegurando uma experiência consistente e eficiente para os desenvolvedores e usuários:
+
+### 1. Funcionalidade Primeiro (GitHub-Inspired)
+Os componentes priorizam a funcionalidade e a familiaridade. Eles devem se parecer e se comportar exatamente como os elementos que os usuários esperam encontrar em um ambiente de desenvolvimento moderno.
+- **Eficiente:** Otimizado para fluxos de trabalho rápidos (ex: atalhos de teclado, navegação clara).
+- **Consistente:** Adere estritamente aos tokens de design (cores, tipografia, espaçamento) que mimetizam a experiência do GitHub.
+
+### 2. Composição e Flexibilidade (Atômico)
+O Design System é construído sobre o paradigma Atômico, garantindo a máxima reusabilidade e baixo acoplamento.
+- **Átomos:** Independentes e com foco singular (ex: `Button`, `Text`).
+- **Moléculas e Organismos:** Compostos por Átomos, mas sem lógica de negócio; focados em *como* apresentar a UI.
+
+### 3. Acessibilidade (A11Y-First)
+Cada componente é projetado e codificado com acessibilidade em mente, seguindo o padrão WCAG e as diretrizes ARIA (como visto nas correções dos Itens 3 e 4).
+- **Tipagem:** Rigorosa, usando TypeScript e JSDoc para segurança e auto-documentação.
+- **Semântica:** Uso correto de tags HTML (`<button>`, `<a>`, `role="tablist"`).
+
+## ⚙️ Guia de Contribuição
+
+Queremos que este Design System evolua com a comunidade. Siga estas etapas para contribuir:
+
+### 1. Preparação
+1. Clone o repositório.
+2. Instale as dependências: `npm install`.
+3. Inicie o Storybook: `npm run storybook`.
+
+### 2. Desenvolvendo um Componente
+Todo novo componente deve ser:
+- **Tipado:** Usar TypeScript e incluir JSDoc em todas as props.
+- **Testado:** Incluir testes unitários (Item 7) e testes de interação (Item 8).
+- **Documentado:** Incluir um arquivo `.mdx` com Do's, Don'ts e exemplos de uso.
+
+### 3. Submissão
+1. Crie uma nova branch: `git checkout -b feature/nome-do-componente`.
+2. Siga o padrão de **Commit Semântico** (ex: `feat: Adiciona componente Sidebar`, `fix: Corrige tipagem do Button`).
+3. Abra um Pull Request e solicite a revisão da equipe.
+
+---
+
+<Stories title="Componentes em Destaque" />
