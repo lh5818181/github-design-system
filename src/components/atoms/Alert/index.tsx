@@ -1,12 +1,14 @@
 import React, { HTMLAttributes } from 'react';
 import styles from './styles.module.scss';
 import { Icon } from '../../atoms/Icon'; // Usando o Átomo Icon
-import { AlertCircle, CheckCircle, X, Info } from 'lucide-react'; // Ícones de exemplo
+import { AlertCircle, CheckCircle, X, Info, LucideIcon } from 'lucide-react'; // Ícones de exemplo
 
-// Tipos de alerta e mapeamento de ícones
+/**
+ * Tipos de alerta e mapeamento de ícones.
+ */
 export type AlertVariant = 'success' | 'error' | 'warning' | 'info';
 
-const iconMap = {
+const iconMap: Record<AlertVariant, LucideIcon> = {
   success: CheckCircle,
   error: AlertCircle,
   warning: AlertCircle,
@@ -16,11 +18,11 @@ const iconMap = {
 export type AlertProps = {
   /** Tipo de alerta (controla cor e ícone). Padrão é 'info'. */
   variant?: AlertVariant;
-  /** Conteúdo da mensagem. */
+  /** Conteúdo da mensagem exibida no corpo do alerta. */
   children: React.ReactNode;
-  /** Se true, mostra um botão para fechar o alerta. */
+  /** Se `true`, mostra um botão de 'X' no canto para fechar o alerta. */
   isDismissible?: boolean;
-  /** Função de callback ao fechar o alerta. */
+  /** Função de callback chamada ao fechar o alerta. Só funciona se `isDismissible` for true. */
   onDismiss?: () => void;
 } & HTMLAttributes<HTMLDivElement>;
 

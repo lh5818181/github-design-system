@@ -1,3 +1,69 @@
-.container {
-  /* Estilos para o componente Pagination */
+// src/components/molecules/Pagination/styles.module.scss
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  gap: 8px; // Espaço entre os botões de controle
+}
+
+.pageButton {
+  // Ajustes de estilo do botão para paginação
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pageLinks {
+  display: flex;
+  gap: 4px; // Espaço entre os links numéricos
+  margin: 0 8px;
+}
+
+.pageLink {
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0 8px;
+  font-size: 14px;
+  font-weight: 500;
+  
+  color: var(--color-text-default, #24292f);
+  background-color: transparent;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: var(--color-bg-subtle, #f6f8fa);
+    border-color: var(--color-border-default, #d0d7de);
+    text-decoration: none;
+  }
+}
+
+.activeLink {
+  composes: pageLink;
+  font-weight: 600;
+  color: var(--color-text-inverse); /* Padronizado para texto branco */
+  background-color: var(--color-bg-active);
+  border-color: var(--color-bg-active);
+  
+  &:hover {
+    color: var(--color-text-inverse); 
+    background-color: var(--color-bg-active-hover); /* Nova variável */
+    border-color: var(--color-bg-active-hover);
+  }
+}
+
+.ellipsis {
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  user-select: none;
 }

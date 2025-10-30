@@ -34,41 +34,46 @@
 // --- Variações de Alerta (Cores do GitHub) ---
 
 .success {
-  color: var(--color-text-success, #1a7f37);
-  background-color: var(--color-bg-success, #e6ffed);
-  border-color: var(--color-border-success, #7ee787);
-
+  background-color: var(--color-bg-success); /* Substituído #dafbe1 [cite: 4] */
+  border-color: var(--color-bg-success-emphasis); /* Substituído #1f883d [cite: 4] */
+  
   .iconWrapper {
-    color: var(--color-text-success, #1a7f37);
+    color: var(--color-bg-success-emphasis); /* Substituído #1f883d [cite: 4] */
   }
 }
 
 .error {
-  color: var(--color-text-error, #cf222e);
-  background-color: var(--color-bg-error, #ffebe9);
-  border-color: var(--color-border-error, #ff7b72);
-
+  background-color: var(--color-bg-danger); /* Substituído #ffebe9 [cite: 4] */
+  border-color: var(--color-bg-danger-emphasis); /* Substituído #cf222e [cite: 4] */
+  
   .iconWrapper {
-    color: var(--color-text-error, #cf222e);
+    color: var(--color-bg-danger-emphasis); /* Substituído #cf222e [cite: 4] */
   }
 }
 
 .warning {
-  color: var(--color-text-warning, #9a6700);
-  background-color: var(--color-bg-warning, #fff8c5);
-  border-color: var(--color-border-warning, #e3b015);
-
+  background-color: var(--color-bg-warning); /* Substituído #fff8c5 [cite: 4] */
+  border-color: var(--color-bg-warning-emphasis); /* Substituído #bf8700 [cite: 4] */
+  
   .iconWrapper {
-    color: var(--color-text-warning, #9a6700);
+    color: var(--color-bg-warning-emphasis); /* Substituído #bf8700 [cite: 4] */
   }
 }
 
 .info {
-  color: var(--color-text-info, #0969da);
-  background-color: var(--color-bg-info, #ddf4ff);
-  border-color: var(--color-border-info, #54aeff);
-
+  background-color: var(--color-bg-active-subtle); /* Substituído #ddf4ff [cite: 4] */
+  border-color: var(--color-bg-active); /* Substituído #0969da [cite: 4] */
+  
   .iconWrapper {
-    color: var(--color-text-info, #0969da);
+    color: var(--color-bg-active); /* Substituído #0969da [cite: 4] */
   }
+}
+
+.content {
+  flex-grow: 1;
+  color: var(--color-text-default); /* Substituído #24292f [cite: 4] */
+}
+
+.dismissButton {
+  color: var(--color-text-muted); /* Substituído #57606a [cite: 4] */
 }

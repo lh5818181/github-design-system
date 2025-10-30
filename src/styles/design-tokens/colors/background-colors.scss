@@ -1,26 +1,31 @@
 :root {
-  --bg-default: #ffffff;
-  --bg-subtle: #f6f8fa;
-  --bg-inset: #f6f8fa;
-  --bg-emphasis: #1f2328;
-  --bg-accent: #ddf4ff;
-  --bg-accent-emphasis: #0969da;
-  --bg-success: #dafbe1;
-  --bg-success-emphasis: #1f883d;
-  --bg-success-hover: #1c8139;
-  --bg-attention: #fff8c5;
-  --bg-attention-emphasis: #bf8700;
-  --bg-severe: #fff1e5;
-  --bg-severe-emphasis: #bc4c00;
-  --bg-danger: #ffebe9;
-  --bg-danger-emphasis: #cf222e;
-  --bg-danger-hover: #a40e26;
-  --bg-done: #fbefff;
-  --bg-done-emphasis: #8250df;
-  --bg-sponsors: #ffeff7;
-  --bg-sponsors-emphasis: #bf3989;
-  --bg-open: #dafbe1;
-  --bg-open-emphasis: #1f883d;
-  --bg-closed: #ffebe9;
-  --bg-closed-emphasis: #cf222e;
+  /* BACKGROUND COLORS */
+  --color-bg-default: #ffffff; /* Base: --bg-default [cite: 1] */
+  --color-bg-subtle: #f6f8fa; /* Base: --bg-subtle [cite: 1] */
+  --color-bg-inset: #f6f8fa; /* Base: --bg-inset [cite: 1] */
+  --color-bg-emphasis: #1f2328; /* Base: --bg-emphasis [cite: 1] */
+  
+  --color-bg-active-subtle: #ddf4ff; /* Base: --bg-accent [cite: 1] */
+  --color-bg-active: #0969da; /* Base: --bg-accent-emphasis [cite: 1] */
+  --color-bg-active-hover: #0855b8; /* Simulado (substitui #0969da:hover) */
+  
+  --color-bg-success: #dafbe1; /* Base: --bg-success [cite: 1] */
+  --color-bg-success-emphasis: #1f883d; /* Base: --bg-success-emphasis [cite: 1] */
+  
+  --color-bg-warning: #fff8c5; /* Base: --bg-attention [cite: 1] */
+  --color-bg-warning-emphasis: #bf8700; /* Base: --bg-attention-emphasis [cite: 1] */
+  
+  --color-bg-danger: #ffebe9; /* Base: --bg-danger [cite: 1] */
+  --color-bg-danger-emphasis: #cf222e; /* Base: --bg-danger-emphasis [cite: 1] */
+  --color-bg-danger-hover: #a40e26; /* Simulado (substitui --bg-danger-hover [cite: 1]) */
+  
+  /* FOREGROUND/TEXT COLORS */
+  --color-text-default: #24292f; /* Base: --fg-default [cite: 2] */
+  --color-text-muted: #57606a; /* Base: --fg-muted [cite: 2] */
+  --color-text-subtle: #6e7781; /* Base: --fg-subtle [cite: 2] */
+  --color-text-inverse: #ffffff; /* Base: --fg-on-emphasis [cite: 2] */
+  
+  /* BORDER COLORS */
+  --color-border-default: #d0d7de; /* Base: --border-default [cite: 3] */
+  --color-border-muted: #d0d7de; /* Base: --border-muted [cite: 3] */
 }

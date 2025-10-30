@@ -4,17 +4,21 @@ import styles from './styles.module.scss';
 // Define os tamanhos que o Avatar pode ter, baseados no uso comum do GitHub
 export type AvatarSize = 'small' | 'medium' | 'large' | 'xlarge';
 
-// O componente Avatar herda as propriedades de uma imagem HTML, mas com tipos definidos
+/**
+ * Propriedades para o componente Avatar.
+ */
 export type AvatarProps = {
-  /** URL da imagem do usuário. */
-  src: string;
-  /** Nome do usuário para o texto alternativo (alt). */
-  alt: string;
-  /** Tamanho do Avatar. Padrão é 'medium'. */
+  /** O tamanho visual do avatar. */
   size?: AvatarSize;
-  /** Se true, adiciona um anel para destacar (como em Avatars ativos). */
+  /** O caminho da imagem do avatar. */
+  src: string;
+  /** Texto alternativo obrigatório para acessibilidade. */
+  alt: string;
+  /** Se true, mostra um indicador verde para simbolizar que o usuário está online. */
+  isOnline?: boolean;
+  /** Se true, mostra um indicador de destaque. */
   highlight?: boolean;
-} & ImgHTMLAttributes<HTMLImageElement>;
+} & ImgHTMLAttributes<HTMLImageElement>; // Herda props padrão do <img>
 
 export const Avatar = ({
   src,

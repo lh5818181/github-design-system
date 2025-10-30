@@ -7,16 +7,24 @@ export type TextSize = 'small' | 'medium' | 'large';
 // Definindo as variações de cor/peso (baseado no uso de texto no GitHub)
 export type TextVariant = 'default' | 'muted' | 'bold';
 
+/**
+ * Propriedades para o componente Text.
+ */
 export type TextProps = {
-  /** Conteúdo do texto. */
+  /** O conteúdo de texto ou elementos internos. */
   children: React.ReactNode;
-  /** Variação de tamanho. Padrão é 'medium'. */
+  /** O tamanho da fonte. */
   size?: TextSize;
-  /** Variação de cor/peso. Padrão é 'default'. */
+  /** A variante de estilo (cor e peso da fonte). */
   variant?: TextVariant;
-  /** Se true, renderiza o componente como um <span> em vez de <p>. */
+  /** Se true, renderiza como <span>. Caso contrário, renderiza como <p>. */
   asSpan?: boolean;
-} & HTMLAttributes<HTMLParagraphElement | HTMLSpanElement>; // Permite props de <p> ou <span>
+  /** Se true, garante que o texto não será quebrado. */
+  noWrap?: boolean;
+} & (
+  | HTMLAttributes<HTMLParagraphElement>
+  | HTMLAttributes<HTMLSpanElement>
+);
 
 export const Text = ({
   children,

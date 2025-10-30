@@ -9,29 +9,43 @@
   max-width: 81.75rem;
   border: none;
   box-shadow: 0 1px 0 0 rgba(32, 31, 35, 0.06);
+  color: var(--color-text-default);/* Substituído #24292f [cite: 6] */
 }
 
 .primary {
-  color: #fff;
-  border: 1px solid #1f883d;
-  background: var(--bg-success-emphasis);
+  color: var(--color-text-inverse);/* Substituído #ffffff [cite: 6] */
+  background-color: var(--color-bg-active);/* Substituído #0969da [cite: 6] */
+  border-color: var(--color-bg-active);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-bg-active-hover); /* Nova variável */
+    border-color: var(--color-bg-active-hover);
+  }
 }
 
 .secondary {
-  color: #24292f;
-  border: 1px solid #d0d7de;
-  background: var(--bg-inset);
+  color: var(--color-text-default); /* Substituído #24292f [cite: 6] */
+  background-color: var(--color-bg-subtle); /* Substituído #f6f8fa [cite: 6] */
+  border-color: var(--color-border-default); /* Substituído #d0d7de [cite: 6] */
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-bg-default); /* Mais claro no hover */
+    border-color: var(--color-text-default); /* Substituído #24292f */
+  }
 }
 
 .danger {
-  color: var(--fg-danger);
-  border: 1px solid #d0d7de;
-  background: var(--bg-inset);
+  color: var(--color-text-inverse); /* Substituído #ffffff [cite: 6] */
+  background-color: var(--color-bg-danger-emphasis); /* Substituído #cf222e [cite: 6] */
+  border-color: var(--color-bg-danger-emphasis);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-bg-danger-hover); /* Substituído #a40e26 [cite: 1] */
+    border-color: var(--color-bg-danger-hover);
+  }
 }
 
-.invisible {
-  color: var(--fg-accent);
-  background: transparent;
-  border: none;
-  box-shadow: none;
+.wrapper:disabled {
+  background-color: var(--color-bg-subtle); 
+  color: var(--color-text-subtle); /* Substituído #6e7781 [cite: 2] */
 }

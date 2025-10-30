@@ -10,7 +10,7 @@ const meta: Meta<InputProps> = {
   component: Input,
   tags: ['autodocs'],
   argTypes: {
-    icon: { control: 'none' }, // Ícones são passados como JSX
+    icon: { control: 'text' }, // Ícones são passados como JSX
     error: { control: 'boolean' },
     disabled: { control: 'boolean' },
   },

@@ -6,40 +6,28 @@ type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'invisible';
 type ButtonSize = 'small' | 'medium' | 'large';
 
 /**
- * Propriedades básicas do nosso componente Button, compatíveis com os atributos HTML de um <button>.
+ * Propriedades básicas do nosso componente Button.
  */
-export interface BaseButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'> {
-  /** * Conteúdo interno do botão (texto, ícones, etc.). 
-   */
+export interface BaseButtonProps {
+  /** Conteúdo interno do botão (texto, ícones, etc.). */
   children: ReactNode;
-  /** * A variante visual do botão, definindo sua cor e estilo. 
-   * Ex: 'primary' (azul do GitHub), 'secondary' (cinza claro), 'danger' (vermelho).
-   */
+  /** A variante visual do botão. Ex: 'primary' (azul), 'secondary' (cinza). */
   variant?: ButtonVariant;
-  /** * O tamanho visual do botão. 
-   */
+  /** O tamanho visual do botão. */
   size?: ButtonSize;
-  /** * Se true, o botão ocupará 100% da largura do seu container. 
-   */
+  /** Se true, o botão ocupará 100% da largura do seu container. */
   isFullWidth?: boolean;
-  /** * Controla o estado de desabilitado. O nome 'disabled' é preferível para compatibilidade HTML.
-   */
+  /** Controla o estado de desabilitado. O nome 'isDisabled' é usado para controle lógico. */
   isDisabled?: boolean;
-  /** * Se true, exibe um spinner (loader) e desabilita o botão.
-   */
+  /** Se true, exibe um spinner (loader) e desabilita o botão. */
   isLoading?: boolean;
-  /** * Renderiza um ícone no lado esquerdo do texto.
-   */
-  iconLeft?: IconProps['icon'];
-  /** * Se especificado, o botão é renderizado como um link <a> em vez de um <button>.
-   */
-  href?: string;
-  /** * Função chamada ao clicar no botão.
-   */
+  /** Renderiza um ícone no lado esquerdo do texto (Use o tipo IconProps['icon'] do seu Átomo Icon). */
+  iconLeft?: any; // Substitua 'any' pelo tipo correto do seu IconProps['icon']
+  /** Função chamada ao clicar no botão. */
   onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }
 
-// União de tipos: Se tiver 'href', o botão se torna um âncora <a>.
+// União de tipos para suportar <button> OU <a>
 export type ButtonProps = BaseButtonProps & (
     | ({ href?: undefined } & ButtonHTMLAttributes<HTMLButtonElement>)
     | ({ href: string } & AnchorHTMLAttributes<HTMLAnchorElement>)

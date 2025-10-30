@@ -4,15 +4,19 @@ import styles from './styles.module.scss';
 // Definindo as variações de estilo do Link (baseado no uso do GitHub)
 export type LinkVariant = 'default' | 'muted' | 'danger';
 
-// O componente Link herda todas as propriedades de uma tag <a> HTML
+/**
+ * Propriedades para o componente Link.
+ */
 export type LinkProps = {
-  /** Variação de estilo do Link. Padrão é 'default' (azul). */
-  variant?: LinkVariant;
-  /** Se true, o link não terá nenhum estilo de link (parece texto normal, mas é clicável). */
-  unstyled?: boolean;
-  /** Conteúdo do link. */
+  /** O caminho para onde o link aponta. */
+  href: string;
+  /** O conteúdo interno do link (texto ou elementos). */
   children: React.ReactNode;
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
+  /** A variante visual do link (cor e ênfase). */
+  variant?: LinkVariant;
+  /** Se true, remove o sublinhado e a cor padrão, deixando apenas a cor do texto herdada. */
+  unstyled?: boolean;
+} & AnchorHTMLAttributes<HTMLAnchorElement>; // Herda props padrão do <a>
 
 export const Link = ({
   variant = 'default',

@@ -1,21 +1,20 @@
-import { SVGProps } from 'react';
 import styles from './styles.module.scss';
-import { LucideIcon } from 'lucide-react';
+import { LucideIcon, LucideProps } from 'lucide-react';
 
 // Definindo os tamanhos do ícone, baseados nos padrões de UI
 export type IconSize = 'small' | 'medium' | 'large' | 'xlarge';
 
-// As props do componente devem aceitar o componente do ícone em si
+/**
+ * Propriedades para o componente Icon.
+ */
 export type IconProps = {
-  /** O componente de ícone a ser renderizado (ex: <Search />) */
+  /** O ícone do Lucide a ser renderizado. */
   icon: LucideIcon;
-  /** Tamanho do ícone. Padrão é 'medium'. */
-  size?: IconSize;
-  /** Cor customizada (se não for passado, usa a cor padrão do CSS/contexto) */
-  color?: string;
-  /** Descrição para acessibilidade (aria-label). */
+  /** O tamanho visual do ícone. */
+  size: IconSize;
+  /** Rótulo obrigatório de acessibilidade para leitores de tela. */
   ariaLabel: string;
-} & SVGProps<SVGSVGElement>; // Herda props SVG como 'onClick'
+} & LucideProps; // Usar LucideProps é melhor que HTMLAttributes<SVGSVGElement>
 
 // Mapeamento dos tamanhos para pixels (valor comum para ícones)
 const sizeMap: Record<IconSize, number> = {

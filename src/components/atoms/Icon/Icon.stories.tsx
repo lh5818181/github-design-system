@@ -8,7 +8,7 @@ const meta: Meta<IconProps> = {
   component: Icon,
   tags: ['autodocs'],
   argTypes: {
-    icon: { control: 'none' },
+    icon: { control: 'text' },
     size: { control: 'select', options: ['small', 'medium', 'large', 'xlarge'] },
   },
   args: {
