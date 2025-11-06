@@ -1,0 +1,4 @@
+import{j as s}from"./jsx-runtime-6eef64cc.js";import{H as a}from"./index-be92cd3d.js";import{h as p}from"./mock-58d568b0.js";import"./index-c013ead5.js";import"./_commonjsHelpers-725317a4.js";import"./index-8b2c8061.js";import"./index-447069e8.js";import"./index-dacc5430.js";import"./index-c6cf7a49.js";import"./index-7ea5cb14.js";import"./index-7dca6306.js";import"./index-1950a249.js";import"./index-16cf2982.js";const O={title:"Organisms/Header",component:a,args:p,parameters:{layout:"fullscreen"}},i={render:m=>s.jsx(a,{...m})},r={...i};var t,e,o;r.parameters={...r.parameters,docs:{...(t=r.parameters)==null?void 0:t.docs,source:{originalSource:`{
+  ...template
+}`,...(o=(e=r.parameters)==null?void 0:e.docs)==null?void 0:o.source}}};const _=["Default"];export{r as Default,_ as __namedExportsOrder,O as default};
+//# sourceMappingURL=Header.stories-e7a459d6.js.map

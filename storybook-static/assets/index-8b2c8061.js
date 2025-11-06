@@ -1,0 +1,2 @@
+import{j as a}from"./jsx-runtime-6eef64cc.js";const r=({src:e,alt:t})=>a.jsx("img",{src:e,alt:t});try{r.displayName="Image",r.__docgenInfo={description:"",displayName:"Image",props:{src:{defaultValue:null,description:"",name:"src",required:!0,type:{name:"string"}},alt:{defaultValue:null,description:"",name:"alt",required:!0,type:{name:"string"}}}}}catch{}export{r as I};
+//# sourceMappingURL=index-8b2c8061.js.map

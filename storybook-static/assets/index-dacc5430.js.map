@@ -1,0 +1,1 @@
+{"version":3,"file":"index-dacc5430.js","sources":["../../src/components/atoms/Divider/index.tsx"],"sourcesContent":["import styles from './styles.module.scss';\n\nexport const Divider = () => {\n  return <div className={styles.wrapper} />;\n};\n"],"names":["Divider","jsx","styles"],"mappings":"uFAEaA,EAAU,IACbC,EAAAA,IAAA,MAAA,CAAI,UAAWC,EAAO,OAAS,CAAA"}
