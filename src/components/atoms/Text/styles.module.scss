@@ -1,0 +1,37 @@
+.text {
+  // Reset básico para o componente <p> ou <span>
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: var(--color-fg-default); // Usa token padrão de cor de texto
+}
+
+// === Tamanhos (Tipografia) ===
+.small {
+  font-size: 12px;
+}
+
+.medium {
+  font-size: 14px;
+}
+
+.large {
+  font-size: 16px;
+}
+
+// === Variantes (Estilo e Peso) ===
+.default {
+  font-weight: 400;
+  color: var(--color-fg-default); 
+}
+
+.muted {
+  font-weight: 400;
+  // Usa um token de cor mais sutil (ex: para metadados ou texto auxiliar)
+  color: var(--color-fg-subtle); 
+}
+
+.bold {
+  font-weight: 600;
+  color: var(--color-fg-default); // Mantém a cor padrão, mas com peso maior
+}
