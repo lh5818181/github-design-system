@@ -1,0 +1,63 @@
+.alert {
+  display: flex;
+  align-items: flex-start; // Alinha o ícone no topo se o conteúdo for longo
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  width: 100%;
+  font-size: 14px;
+}
+
+.iconWrapper {
+  flex-shrink: 0; // Impede o ícone de encolher
+  margin-right: 8px;
+  padding-top: 2px; // Ajuste fino para alinhar o ícone com a linha de texto
+}
+
+.contentWrapper {
+  flex-grow: 1;
+  // Garante que o texto use a cor de foreground padrão
+  color: var(--color-fg-default); 
+}
+
+.dismissButton {
+  flex-shrink: 0;
+  margin-left: 16px;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+
+  // Garante que o foco seja visível, mas discreto
+  &:focus-visible {
+    outline: 2px solid var(--color-accent-fg);
+    outline-offset: 2px;
+  }
+}
+
+// === Variantes ===
+
+// Sucesso (Verde)
+.success {
+  background-color: var(--color-bg-success);
+  border-color: var(--color-border-success);
+}
+
+// Erro (Vermelho)
+.error {
+  background-color: var(--color-bg-danger);
+  border-color: var(--color-border-danger);
+}
+
+// Aviso (Amarelo/Atenção)
+.warning {
+  background-color: var(--color-bg-attention);
+  border-color: var(--color-border-attention);
+}
+
+// Informação (Azul/Neutro)
+.info {
+  background-color: var(--color-bg-accent);
+  border-color: var(--color-border-accent);
+}

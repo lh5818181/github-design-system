@@ -1,0 +1,87 @@
+.dropdownContainer {
+  position: relative;
+  display: inline-block; // Permite que o contêiner envolva o trigger
+}
+
+.dropdownTrigger {
+  // Estilo do botão que abre o dropdown (geralmente um botão discreto)
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  
+  // Opcional: Estilo de botão sutil, caso o trigger seja apenas texto/ícone
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  
+  // Cor do texto
+  color: var(--color-fg-default); 
+  
+  &:hover {
+    background-color: var(--color-bg-subtle);
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  z-index: 100; // Garante que fique acima de outros elementos
+  margin-top: 4px;
+  padding: 8px 0; // Padding interno para os itens
+
+  // Estilo de Contêiner GitHub
+  background-color: var(--color-canvas-default); // Fundo branco/claro
+  border: 1px solid var(--color-border-default); // Borda cinza
+  border-radius: 6px;
+  box-shadow: var(--color-shadow-large, 0px 8px 24px rgba(140, 149, 159, 0.2)); // Sombra de elevação
+
+  // Largura mínima
+  min-width: 180px; 
+
+  // Esconde o menu até que seja aberto
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
+}
+
+// === Posição (Alinhamento) ===
+.left {
+  left: 0; // Padrão
+}
+
+.right {
+  right: 0; // Alinha à direita do trigger
+}
+
+// === Estado Aberto ===
+.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+// === Item Individual do Menu ===
+.dropdownItem {
+  display: block;
+  width: 100%;
+  padding: 4px 12px;
+  text-align: left;
+  
+  // Reset Button
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-fg-default);
+
+  &:hover {
+    background-color: var(--color-bg-accent); // Fundo azul claro no hover
+    color: var(--color-fg-default);
+  }
+  
+  // Foco para acessibilidade
+  &:focus-visible {
+    outline: none;
+    background-color: var(--color-bg-accent); 
+  }
+}

@@ -1,0 +1,90 @@
+.tabsContainer {
+  // A borda inferior que percorre toda a barra de abas
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.tabList {
+  display: flex;
+  gap: 16px; // Espaçamento entre os botões
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tabButton {
+  // Reset Button
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0; // Espaçamento vertical
+  margin-bottom: -1px; // Puxa o botão para cima sobre a borda do container
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  // Borda inferior de 2px, inicialmente transparente
+  border-bottom: 2px solid transparent; 
+  
+  transition: border-color 0.15s ease-in-out;
+  
+  // Estilo de foco/acessibilidade
+  &:focus-visible {
+    outline: 2px solid var(--color-accent-fg);
+    outline-offset: 2px;
+  }
+
+  // Garante que o texto use a cor padrão, mas pode ser sobreescrito pelo .active
+  :global(.text) { 
+    color: var(--color-fg-default); 
+  }
+}
+
+// === Estado Ativo (Selecionado) ===
+.active {
+  // Borda azul (accent) na aba ativa
+  border-bottom-color: var(--color-accent-fg); 
+  
+  // Garante que o texto use o peso de fonte negrito
+  :global(.text) {
+    font-weight: 600; 
+  }
+}
+
+// === Estado Hover ===
+.tabButton:hover:not(.active) {
+  // Borda inferior sutil no hover (padrão GitHub)
+  border-bottom-color: var(--color-border-muted); 
+  
+  // Garante que o texto tenha a cor default no hover
+  :global(.text) {
+    color: var(--color-fg-default); 
+  }
+}
+
+// === Estilo do Contador ===
+.tabCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 50em; // Efeito pílula
+  background-color: var(--color-bg-subtle); 
+  
+  // O Átomo Text deve ser sutil/muted
+  :global(.text) {
+    color: var(--color-fg-muted); 
+  }
+}
+
+// Ajuste para o contador na aba ativa
+.active .tabCount {
+  // O GitHub usa uma cor de fundo mais forte no contador ativo
+  background-color: var(--color-bg-emphasis); 
+  
+  :global(.text) {
+    color: var(--color-fg-on-emphasis); // Cor clara para contraste
+  }
+}

@@ -8,7 +8,7 @@ export type TextProps = {
   /** Tamanho do texto. */
   size?: 'small' | 'medium' | 'large';
   /** Variantes de cor/estilo. */
-  variant?: 'default' | 'muted' | 'bold';
+  variant?: 'default' | 'muted' | 'bold' | 'danger';
   /** Renderiza como <span> em vez de <p> (útil para metadados inline). */
   asSpan?: boolean;
 } & (HTMLAttributes<HTMLParagraphElement> | HTMLAttributes<HTMLSpanElement>);

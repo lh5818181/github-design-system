@@ -1,0 +1,44 @@
+.icon {
+  // Garante que o ícone seja tratado como um bloco inline
+  display: inline-block;
+  vertical-align: middle;
+  stroke-width: 2; // Padrão Lucide/GitHub
+
+  // Transições básicas para mudanças de cor (hover, etc.)
+  transition: color 0.15s ease-in-out;
+}
+
+// === Tamanhos ===
+.small {
+  width: 14px;
+  height: 14px;
+}
+.medium {
+  width: 16px;
+  height: 16px;
+}
+.large {
+  width: 20px;
+  height: 20px;
+}
+.xlarge {
+  width: 24px;
+  height: 24px;
+}
+
+// === Cores (Usando Tokens do GitHub) ===
+.default {
+  color: var(--color-fg-default); 
+}
+.muted {
+  color: var(--color-fg-subtle); 
+}
+.success {
+  color: var(--color-success-fg); 
+}
+.danger {
+  color: var(--color-danger-fg); 
+}
+.accent {
+  color: var(--color-accent-fg); 
+}

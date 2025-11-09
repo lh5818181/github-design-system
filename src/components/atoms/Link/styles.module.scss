@@ -1,0 +1,47 @@
+.link {
+  // Configuração base
+  text-decoration: none;
+  cursor: pointer;
+  
+  // Transição suave para estados de cor
+  transition: color 0.15s ease-in-out;
+
+  // Garante que o link seja sublinhado ao ser focado ou ao passar o mouse
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    outline: none; // Remove o outline padrão se o :focus-visible for configurado globalmente
+  }
+}
+
+// === Variantes de Cores ===
+
+// 1. Padrão (azul/accent)
+.default {
+  color: var(--color-link-default); // Geralmente um azul
+  
+  &:hover,
+  &:focus {
+    color: var(--color-link-hover);
+  }
+}
+
+// 2. Sutil (cor de primeiro plano sutil)
+.subtle {
+  color: var(--color-fg-subtle); 
+  
+  &:hover,
+  &:focus {
+    color: var(--color-fg-default); // Fica mais escuro no hover
+  }
+}
+
+// 3. Perigo/Remoção (vermelho)
+.danger {
+  color: var(--color-danger-fg);
+  
+  &:hover,
+  &:focus {
+    color: var(--color-danger-fg-emphasis); // Cor mais forte no hover
+  }
+}
