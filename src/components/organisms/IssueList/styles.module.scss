@@ -1,0 +1,37 @@
+.issueList {
+  // Estilo de painel/contêiner principal do GitHub
+  background-color: var(--color-canvas-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  width: 100%; // Ocupa a largura total
+  box-shadow: var(--color-shadow-small);
+}
+
+.header {
+  // Estilo de cabeçalho: Borda inferior
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--color-border-default);
+  background-color: var(--color-canvas-subtle); // Fundo sutilmente cinza
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.body {
+  padding: 0;
+  
+  // Remove a borda superior do primeiro item da lista, que está logo abaixo do header
+  // O seletor global é necessário porque IssueListItem é um componente separado.
+  :global(.issueListItem):first-child {
+    border-top: none;
+  }
+}
+
+.footer {
+  // Rodapé (onde a paginação fica)
+  border-top: 1px solid var(--color-border-default);
+  padding: 0; // O componente Pagination já tem padding interno
+  
+  // Garante que o rodapé tenha as bordas arredondadas inferiores
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}

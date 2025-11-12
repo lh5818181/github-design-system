@@ -1,0 +1,55 @@
+.issueListItem {
+  display: flex;
+  padding: 8px 16px;
+  border-top: 1px solid var(--color-border-default);
+  // Garante que o item da lista não tenha borda superior se for o primeiro
+  &:first-child {
+    border-top: none;
+  }
+}
+
+.iconColumn {
+  flex-shrink: 0;
+  width: 30px; // Largura fixa para o ícone
+  padding-top: 4px; // Alinhamento vertical com o título
+}
+
+.contentColumn {
+  flex-grow: 1;
+  padding-left: 8px;
+}
+
+.titleAndLabels {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; // Permite quebrar se houver muitas tags
+  gap: 8px; // Espaço entre título e tags
+  line-height: 1.5;
+}
+
+.titleLink {
+  // O link em si deve usar o Átomo Link, mas o estilo deve ser ajustado para parecer um título
+  color: var(--color-fg-default); // Cor de texto padrão
+  text-decoration: none; // Remove sublinhado padrão
+
+  &:hover {
+    color: var(--color-accent-fg); // Cor azul no hover (padrão GitHub)
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    // Usa o outline do Atom Link
+    outline-offset: 2px;
+  }
+}
+
+.labelsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px; // Espaço entre os labels (tags)
+}
+
+.metadata {
+  margin-top: 2px;
+  // O Átomo Text já lida com a cor 'muted'
+}

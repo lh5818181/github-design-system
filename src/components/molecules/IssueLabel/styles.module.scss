@@ -1,0 +1,18 @@
+.issueLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  // Estilo de pílula (arredondamento máximo)
+  border-radius: 50em; 
+  
+  // Padding ajustado para a tipografia small do GitHub
+  padding: 0 8px; 
+  height: 20px; 
+  
+  // Garante que o texto dentro da tag (Átomo Text) seja small
+  :global(.text) {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
