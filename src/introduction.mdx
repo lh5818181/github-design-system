@@ -1,27 +1,60 @@
-import { Meta } from '@storybook/addon-docs';
+import { Title, Subtitle, Description, Primary, Controls } from '@storybook/blocks';
 
-<Meta title="Introdução" />
+<Title>GITHUB DESIGN SYSTEM 🐙</Title>
+<Subtitle>Um Sistema de Design Modular e Inspirado no Padrão GitHub</Subtitle>
 
-# GitHub Design System
+***
 
-Bem-vindo ao Design System do GitHub, um projeto criado para demonstrar a aplicação dos conceitos de **Design System** e **Atomic Design** em um ambiente de desenvolvimento moderno com **React** e **Storybook**, conforme detalhado no **Capítulo 15 do ebook "Design para Devs"**.
+## 👋 Bem-vindo ao Design System
 
-## Objetivo
+Este sistema de design foi criado para servir como um conjunto de blocos de construção robustos e acessíveis, inspirados na estética e usabilidade do **GitHub**.
 
-O objetivo deste Design System é fornecer um conjunto de componentes reutilizáveis e documentados que garantam a **consistência** e a **eficiência** no desenvolvimento de interfaces.
+Nosso objetivo é acelerar o desenvolvimento de novas interfaces, garantindo **consistência visual**, **excelência em acessibilidade (A11Y)** e **alta estabilidade** em toda a aplicação.
 
-## Estrutura
+### 🎯 Nossa Filosofia: Atomic Design
 
-A estrutura do projeto segue o padrão de Atomic Design:
+O projeto é estruturado seguindo a metodologia **Atomic Design**, o que garante a modularidade e a manutenibilidade dos componentes:
 
-*   **Atoms**: Elementos básicos (ex: Botão, Ícone).
-*   **Molecules**: Agrupamento de Atoms (ex: Campo de Busca).
-*   **Organisms**: Agrupamento de Molecules e Atoms (ex: Cabeçalho).
-*   **Templates**: Estruturas de página (ex: Layout de Repositório).
-*   **Pages**: Páginas completas que utilizam os Templates.
+| Nível | Conceito | Exemplos |
+| :--- | :--- | :--- |
+| **Átomos** | Elementos base da UI. | `Button`, `Text`, `Icon`. |
+| **Moléculas** | Grupos de Átomos. | `Pagination`, `Dropdown`, `IssueLabel`. |
+| **Organismos** | Grupos de Moléculas e Átomos. | `IssueListItem`, `IssueList`. |
+| **Templates** | Estrutura da página. | Próxima Fase. |
 
-## Como Usar
+***
 
-Para começar, navegue pelos componentes na barra lateral para ver a documentação, exemplos de uso e propriedades de cada elemento.
+## 🛣️ Status do Projeto
 
-**Divirta-se construindo interfaces consistentes!**
+O projeto está atualmente na **Fase 2: Qualidade, Documentação e Testes**, com todos os componentes essenciais de UI concluídos.
+
+| Fase | Título | Status |
+| :--- | :--- | :--- |
+| **Fase 1** | Blocos de Construção (UI) | ✅ **Concluída** |
+| **Fase 2** | Qualidade, Documentação e Testes | Em Andamento (Item 2.5) |
+| **Fase 3** | Publicação e Disponibilização | Pendente |
+
+### O que a Fase 1 entregou?
+
+A Fase 1 entregou a base completa para a interface, incluindo:
+* **Fundamentos:** Tipografia, Iconografia e tokens semânticos de cor.
+* **Componentes de Ação:** `Button`, `Link`, `Dropdown`.
+* **Componentes de Navegação e Lista:** `Pagination`, `Tabs`, `IssueLabel`, `IssueListItem` e `IssueList`.
+
+***
+
+## 🔗 Navegação Rápida
+
+Utilize os links da barra lateral para navegar, ou comece pelas seções principais abaixo:
+
+### 🎨 Estilo e Fundamentos
+* **Tokens:** Visão geral da paleta de cores, tipografia e espaçamento.
+* **Acessibilidade (A11Y):** Diretrizes sobre contraste, foco e navegação por teclado.
+
+### 🧩 Componentes
+* [**Átomos**](/story/atoms-button--docs): Elementos básicos.
+* [**Moléculas**](/story/molecules-dropdown--docs): Componentes compostos (ex: `Pagination`).
+* [**Organismos**](/story/organisms-issuelist--docs): Seções complexas da interface.
+
+### 🧪 Qualidade
+* **Testes:** Cobertura de testes unitários, de integração e visuais (Em breve).
