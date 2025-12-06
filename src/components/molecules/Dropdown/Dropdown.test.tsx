@@ -1,8 +1,7 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Dropdown, DropdownItem } from '.';
-import React from 'react';
 
-// CORREÇÃO: Usar <span> para o mock do trigger para resolver o erro de nesting de botões (botão dentro de botão).
+
 const MockTrigger = () => <span>Abrir Menu</span>;
 const mockOnItemClick = jest.fn();
 

@@ -1,7 +1,6 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import styles from './styles.module.scss';
 import { LucideProps } from 'lucide-react'; 
-import React from 'react';
 
 // 1. Definimos um tipo base de props de SVG, excluindo 'ref', 'color' e 'size' para evitar conflitos.
 type BaseSvgProps = Omit<ComponentPropsWithoutRef<'svg'>, 'color' | 'size'>;

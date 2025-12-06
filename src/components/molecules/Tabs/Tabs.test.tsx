@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Tabs, TabItem } from '.';
-import React from 'react';
 
 const mockTabs: TabItem[] = [
   { id: 'code', label: 'Code' },

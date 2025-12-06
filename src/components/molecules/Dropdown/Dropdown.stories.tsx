@@ -2,23 +2,29 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Dropdown, DropdownProps, DropdownItem } from '.';
 import { Text } from '../../atoms/Text';
 import { Settings, LogOut, Code } from 'lucide-react';
-import styles from './styles.module.scss'; // CORREÇÃO: Importa o objeto de estilos
+
+
+// Mock function para onClick (obrigatório para DropdownItemProps)
+const mockOnClick = () => alert('Ação do Dropdown Clicada'); 
 
 const meta: Meta<DropdownProps> = {
   title: 'molecules/Dropdown',
   component: Dropdown,
   tags: ['autodocs'],
   argTypes: {
-    trigger: { control: 'text', description: 'O conteúdo do botão que aciona o menu.' },
+    // CORREÇÃO: trigger é um React Element, deve ter o controle desativado.
+    trigger: { control: false }, 
     children: { control: false }, 
-    align: { control: 'select', options: ['left', 'right'] },
-    isOpen: { control: 'boolean' },
+    // CORREÇÃO: Usar 'position', que é a prop real do componente, em vez de 'align'.
+    position: { control: 'select', options: ['left', 'right'], description: 'Posição do menu Dropdown.' },
     ariaLabel: { control: 'text' },
+    // CORREÇÃO: Removido 'isOpen' que não existe na interface DropdownProps
   },
   args: {
     ariaLabel: 'Menu de opções do usuário',
     trigger: <Text asSpan size="medium">Opções</Text>,
-    align: 'left',
+    // CORREÇÃO: Usar 'position', que é a prop real do componente.
+    position: 'left', 
   },
 };
 
@@ -41,12 +47,11 @@ const Template: Story = {
           </div>
         </DropdownItem>
         <div 
-          className={styles.divider} 
+          // className={styles.divider} // Removido
           style={{ margin: '4px 0', borderTop: '1px solid var(--color-border-default)' }} 
         />
         <DropdownItem onClick={() => alert('Sair')}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            {/* CORREÇÃO: variant="danger" agora é válido no TextProps */}
             <LogOut size={16} /> <Text asSpan variant="danger">Sair</Text>
           </div>
         </DropdownItem>
@@ -61,13 +66,14 @@ export const AlignedRight: Story = {
   ...Template,
   args: {
     ...Template.args,
-    align: 'right',
+    position: 'right', // CORREÇÃO: Usar 'position'
   },
   render: (args) => (
     <div style={{ padding: '50px', display: 'flex', justifyContent: 'flex-end' }}>
       <Dropdown {...args}>
-        <DropdownItem>Item 1</DropdownItem>
-        <DropdownItem>Item 2</DropdownItem>
+        {/* CORREÇÃO: Adicionado 'onClick' que é obrigatório */}
+        <DropdownItem onClick={mockOnClick}>Item 1</DropdownItem> 
+        <DropdownItem onClick={mockOnClick}>Item 2</DropdownItem>
       </Dropdown>
     </div>
   ),

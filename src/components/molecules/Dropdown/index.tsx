@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect, HTMLAttributes, useCallback } from 'react';
-import styles from './Dropdown.module.scss'; 
+import styles from './styles.module.scss'; 
 
 // -------------------------------------------------------------------
 // 1. DROP-DOWN ITEM
 // -------------------------------------------------------------------
 
-interface DropdownItemProps extends HTMLAttributes<HTMLButtonElement> {
+export interface DropdownItemProps extends HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   /** Função de callback chamada no clique do usuário. */
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -39,17 +39,16 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
 // 2. DROP-DOWN PRINCIPAL
 // -------------------------------------------------------------------
 
-interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
+export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   /** O elemento que aciona o Dropdown (e.g., um botão ou span). */
   trigger: React.ReactElement;
   /** Conteúdo do menu Dropdown (deve ser DropdownItem). */
   children: React.ReactNode;
   /** Rótulo de acessibilidade para o botão de trigger. */
   ariaLabel: string;
-  /** Posição do menu em relação ao trigger. */
+  /** CORREÇÃO: Mantenha 'position' como nome da prop, pois é o que o componente utiliza */
   position?: 'left' | 'right';
 }
-
 export const Dropdown: React.FC<DropdownProps> = ({
   trigger,
   children,

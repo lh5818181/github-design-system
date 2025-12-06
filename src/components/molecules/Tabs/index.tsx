@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import styles from './styles.module.scss';
 import { Text } from '../../atoms/Text'; // Usando o Átomo Text para tipografia
 
