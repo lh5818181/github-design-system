@@ -1,7 +1,7 @@
 import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { IssueList, IssueListProps, IssueListItemProps } from '.';
-import { action } from '@storybook/addon-actions';
+import { action } from "@storybook/addon-actions";
 
 // Dados MOCK para preencher a lista
 const mockIssues: IssueListItemProps[] = [

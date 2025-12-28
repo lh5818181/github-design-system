@@ -2,14 +2,13 @@ import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   stories: [
-    '../src/introduction.mdx', '../src/components/**/*.stories.tsx',
-    '../src/templates/**/*.stories.tsx',
-    '../src/pages/**/*.stories.tsx',
+    '../src/introduction.mdx',
+    '../src/**/*.mdx', // Isso vai pegar seus arquivos renomeados
+    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
     '@storybook/addon-designs',
   ],
@@ -17,8 +16,6 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
-  docs: {
-    autodocs: true,
-  },
 };
+
 export default config;

@@ -1,63 +1,56 @@
-import { Title, Subtitle, Description, Primary, Controls } from '@storybook/blocks';
-import { Meta } from '@storybook/addon-docs';
+import { Meta } from '@storybook/blocks';
 
-<Meta title="Introdução/Visão Geral" /> 
+<Meta title="Introdução/Boas-vindas" />
 
-<Title>GITHUB DESIGN SYSTEM 🐙</Title>
-<Subtitle>Um Sistema de Design Modular e Inspirado no Padrão GitHub</Subtitle>
+# GITHUB DESIGN SYSTEM 🐙
+### Um Sistema de Design Modular e Inspirado no Padrão GitHub
 
-***
+👋 **Bem-vindo ao nosso ecossistema de componentes.**
 
-## 👋 Bem-vindo ao Design System
+Este sistema foi construído para garantir que o desenvolvimento de interfaces siga o padrão de qualidade do GitHub, focando em **acessibilidade**, **performance** e **modularidade**.
 
-Este sistema de design foi criado para servir como um conjunto de blocos de construção robustos e acessíveis, inspirados na estética e usabilidade do **GitHub**.
+---
 
-Nosso objetivo é acelerar o desenvolvimento de novas interfaces, garantindo **consistência visual**, **excelência em acessibilidade (A11Y)** e **alta estabilidade** em toda a aplicação.
+### 🎯 Atomic Design na Prática
+Nossa estrutura é fundamentada na modularidade, permitindo que cada peça seja testada individualmente e reutilizada com total segurança.
 
-### 🎯 Nossa Filosofia: Atomic Design
+#### 🧱 Átomos
+*Elementos base e indivisíveis da interface.*
+> `Button` • `Text` • `Icon` • `Link`
 
-O projeto é estruturado seguindo a metodologia **Atomic Design**, o que garante a modularidade e a manutenibilidade dos componentes:
+#### 🧬 Moléculas
+*Grupos de átomos que formam componentes funcionais simples.*
+> `Pagination` • `Dropdown` • `Tabs` • `IssueLabel`
 
-| Nível | Conceito | Exemplos |
-| :--- | :--- | :--- |
-| **Átomos** | Elementos base da UI. | `Button`, `Text`, `Icon`. |
-| **Moléculas** | Grupos de Átomos. | `Pagination`, `Dropdown`, `IssueLabel`. |
-| **Organismos** | Grupos de Moléculas e Átomos. | `IssueListItem`, `IssueList`. |
-| **Templates** | Estrutura da página. | Próxima Fase. |
+#### 🏗️ Organismos
+*Seções complexas formadas pela união de moléculas e átomos.*
+> `IssueListItem` • `IssueList`
 
-***
+---
 
-## 🛣️ Status do Projeto
+### 🧪 Qualidade e Estabilidade
+Confirmado via terminal em **dezembro de 2025**:
+* ✅ **Suítes de Testes:** 100% aprovadas (Jest).
+* ✅ **Acessibilidade:** Componentes validados para navegação via teclado e ARIA.
+* ✅ **Documentação:** Gerada dinamicamente via Storybook Autodocs.
 
-O projeto está atualmente na **Fase 2: Qualidade, Documentação e Testes**, com todos os componentes essenciais de UI concluídos.
+---
 
-| Fase | Título | Status |
-| :--- | :--- | :--- |
-| **Fase 1** | Blocos de Construção (UI) | ✅ **Concluída** |
-| **Fase 2** | Qualidade, Documentação e Testes | ✅ **Concluída** |
-| **Fase 3** | Publicação e Disponibilização | ✅ **Concluída** |
+### 🛣️ Status do Roadmap
 
-### O que a Fase 1 entregou?
+* **🟢 Fase 1: Fundamentos e UI Base**
+    > Desenvolvimento dos tokens de design e componentes essenciais de interface.
+    > **Status:** Concluída
 
-A Fase 1 entregou a base completa para a interface, incluindo:
-* **Fundamentos:** Tipografia, Iconografia e tokens semânticos de cor.
-* **Componentes de Ação:** `Button`, `Link`, `Dropdown`.
-* **Componentes de Navegação e Lista:** `Pagination`, `Tabs`, `IssueLabel`, `IssueListItem` e `IssueList`.
+* **🟢 Fase 2: Qualidade e Cobertura**
+    > Implementação de testes unitários (Jest) e documentação técnica.
+    > **Status:** Concluída
 
-***
+* **🟢 Fase 3: Estabilização de Ambiente**
+    > Refatoração do Storybook para v8.6 e ajustes de infraestrutura.
+    > **Status:** Concluída
 
-## 🔗 Navegação Rápida
+---
 
-Utilize os links da barra lateral para navegar, ou comece pelas seções principais abaixo:
-
-### 🎨 Estilo e Fundamentos
-* **Tokens:** Visão geral da paleta de cores, tipografia e espaçamento.
-* **Acessibilidade (A11Y):** Diretrizes sobre contraste, foco e navegação por teclado.
-
-### 🧩 Componentes
-* [**Átomos**](/story/atoms-button--docs): Elementos básicos.
-* [**Moléculas**](/story/molecules-dropdown--docs): Componentes compostos (ex: `Pagination`).
-* [**Organismos**](/story/organisms-issuelist--docs): Seções complexas da interface.
-
-### 🧪 Qualidade
-* **Testes:** Cobertura de testes unitários, de integração e visuais (Em breve).
+### 🔗 Como começar?
+Navegue pelos componentes no menu lateral para visualizar as propriedades, testar as interações em tempo real no **Canvas** e consultar as diretrizes de uso na aba **Docs**.

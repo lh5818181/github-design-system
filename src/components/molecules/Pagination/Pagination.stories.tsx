@@ -1,7 +1,7 @@
 import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Pagination, PaginationProps } from '.';
-import { action } from '@storybook/addon-actions';
+import { action } from "@storybook/addon-actions";
 
 const meta: Meta<PaginationProps> = {
   title: 'molecules/Pagination',

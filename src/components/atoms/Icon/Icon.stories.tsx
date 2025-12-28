@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Icon, IconProps } from '.';
 import { AlertCircle, CheckCircle, Bell, Settings } from 'lucide-react';
 
