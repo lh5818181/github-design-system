@@ -8,7 +8,7 @@
 
 ## 📖 Sobre o Projeto
 
-Este projeto é a implementação de um Design System utilizando **React**, **TypeScript** e **Storybook**, seguindo a metodologia **Atomic Design** apresentada no **Capítulo 15** do ebook *"Design para Devs"*[cite: 599].
+Este projeto é a implementação de um Design System utilizando **React**, **TypeScript** e **Storybook**, seguindo a metodologia **Atomic Design** apresentada no **Capítulo 15** do ebook *"Design para Devs"*.
 
 O objetivo foi transcender a implementação visual, garantindo um ecossistema robusto com **testes unitários**, **documentação automática** e **deploy contínuo**.
 
@@ -16,9 +16,9 @@ O objetivo foi transcender a implementação visual, garantindo um ecossistema r
 
 ## 🚀 Stack Tecnológica
 
-* **Core:** React 18, TypeScript, Vite [cite: 609]
-* **Design:** Sass (SCSS Modules), Design Tokens [cite: 616, 626]
-* **Documentação:** Storybook 8 (com Autodocs) [cite: 657]
+* **Core:** React 18, TypeScript, Vite
+* **Design:** Sass (SCSS Modules), Design Tokens
+* **Documentação:** Storybook 8 (com Autodocs)
 * **Testes:** Jest, React Testing Library
 * **CI/CD:** GitHub Actions (Deploy automático no GitHub Pages)
 
@@ -26,15 +26,15 @@ O objetivo foi transcender a implementação visual, garantindo um ecossistema r
 
 ## 🏗️ Arquitetura (Atomic Design)
 
-A estrutura de pastas reflete estritamente os níveis do Atomic Design sugeridos no material de referência[cite: 605]:
+A estrutura de pastas reflete estritamente os níveis do Atomic Design sugeridos no material de referência:
 
-* 🧱 **`src/components/atoms`**: Elementos indivisíveis (ex: `Button`, `Image`, `Text`)[cite: 713].
-* 🧬 **`src/components/molecules`**: Agrupamentos funcionais (ex: `Search`, `Dropdown`, `Pagination`)[cite: 730].
-* 🏗️ **`src/components/organisms`**: Seções complexas da interface (ex: `Header`, `IssueList`)[cite: 740].
-* 📄 **`src/templates`**: Estruturas de layout sem dados reais[cite: 750].
-* 📑 **`src/pages`**: Instâncias finais com injeção de dados[cite: 764].
+* 🧱 **`src/components/atoms`**: Elementos indivisíveis (ex: `Button`, `Image`, `Text`).
+* 🧬 **`src/components/molecules`**: Agrupamentos funcionais (ex: `Search`, `Dropdown`, `Pagination`).
+* 🏗️ **`src/components/organisms`**: Seções complexas da interface (ex: `Header`, `IssueList`).
+* 📄 **`src/templates`**: Estruturas de layout sem dados reais.
+* 📑 **`src/pages`**: Instâncias finais com injeção de dados.
 
-Além disso, utilizamos **Design Tokens** para centralizar cores e tipografia em `src/styles/design-tokens`[cite: 634].
+Além disso, utilizamos **Design Tokens** para centralizar cores e tipografia em `src/styles/design-tokens`.
 
 ---
 
