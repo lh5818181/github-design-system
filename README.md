@@ -1,50 +1,86 @@
-# GitHub Design System
+# GitHub Design System 🐙
 
-Este projeto é a implementação de um Design System utilizando **React** e **Storybook**, seguindo a metodologia e os conceitos apresentados no **Capítulo 15 do ebook "Design para Devs"**.
+> Um sistema de design modular, acessível e testado, desenvolvido como desafio prático do ebook **"Design para Devs"**.
 
-## Estrutura do Projeto
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://lh5818181.github.io/github-design-system/)
+![CI/CD](https://github.com/lh5818181/github-design-system/actions/workflows/storybook.yml/badge.svg)
+![Jest Tests](https://img.shields.io/badge/tests-100%25-brightgreen)
 
-O projeto segue a arquitetura de Atomic Design, conforme sugerido no ebook:
+## 📖 Sobre o Projeto
 
--   `src/components/atoms`: Componentes básicos e indivisíveis (ex: Botão, Ícone).
--   `src/components/molecules`: Agrupamento de átomos (ex: Campo de Busca).
--   `src/components/organisms`: Agrupamento de moléculas e átomos (ex: Cabeçalho, Lista de Issues).
--   `src/templates`: Estruturas de página com organismos e moléculas.
--   `src/pages`: Páginas completas que utilizam os templates.
--   `.storybook`: Arquivos de configuração do Storybook.
--   `src/introduction.mdx`: Arquivo de introdução corrigido e configurado para ser a página inicial do Storybook.
+[cite_start]Este projeto é a implementação de um Design System utilizando **React**, **TypeScript** e **Storybook**, seguindo a metodologia **Atomic Design** apresentada no **Capítulo 15** do ebook *"Design para Devs"*[cite: 599].
 
-## Como Iniciar
+O objetivo foi transcender a implementação visual, garantindo um ecossistema robusto com **testes unitários**, **documentação automática** e **deploy contínuo**.
 
-Para rodar o projeto localmente, siga os passos abaixo:
+---
 
-1.  **Instalar Dependências:**
+## 🚀 Stack Tecnológica
+
+* [cite_start]**Core:** React 18, TypeScript, Vite [cite: 609]
+* [cite_start]**Design:** Sass (SCSS Modules), Design Tokens [cite: 616, 626]
+* [cite_start]**Documentação:** Storybook 8 (com Autodocs) [cite: 657]
+* **Testes:** Jest, React Testing Library
+* **CI/CD:** GitHub Actions (Deploy automático no GitHub Pages)
+
+---
+
+## 🏗️ Arquitetura (Atomic Design)
+
+[cite_start]A estrutura de pastas reflete estritamente os níveis do Atomic Design sugeridos no material de referência[cite: 605]:
+
+* [cite_start]🧱 **`src/components/atoms`**: Elementos indivisíveis (ex: `Button`, `Image`, `Text`)[cite: 713].
+* [cite_start]🧬 **`src/components/molecules`**: Agrupamentos funcionais (ex: `Search`, `Dropdown`, `Pagination`)[cite: 730].
+* [cite_start]🏗️ **`src/components/organisms`**: Seções complexas da interface (ex: `Header`, `IssueList`)[cite: 740].
+* [cite_start]📄 **`src/templates`**: Estruturas de layout sem dados reais[cite: 750].
+* [cite_start]📑 **`src/pages`**: Instâncias finais com injeção de dados[cite: 764].
+
+[cite_start]Além disso, utilizamos **Design Tokens** para centralizar cores e tipografia em `src/styles/design-tokens`[cite: 634].
+
+---
+
+## 🛠️ Instalação e Uso
+
+Para rodar o projeto localmente:
+
+1.  **Instale as dependências:**
     ```bash
-    npm install
-    # ou
-    yarn install
+    npm install --legacy-peer-deps
     ```
+    *(A flag `--legacy-peer-deps` é necessária devido à compatibilidade estrita entre Vite 7 e Storybook 8)*
 
-2.  **Iniciar o Storybook:**
+2.  **Inicie o Storybook:**
     ```bash
     npm run storybook
-    # ou
-    yarn storybook
+    ```
+    O ambiente de desenvolvimento abrirá em `http://localhost:6006`.
+
+3.  **Rodar Testes Unitários:**
+    Para validar a integridade dos componentes:
+    ```bash
+    npm test
     ```
 
-O Storybook será iniciado em `http://localhost:6006` e a página de introdução (`introduction.mdx`) será a primeira a ser exibida.
+---
 
-## Correções Aplicadas
+## 🔄 Melhorias e Estabilização (V2)
 
-O projeto original apresentava problemas de inicialização e visualização do arquivo de introdução. As seguintes correções foram aplicadas para garantir a funcionalidade:
+Este repositório passou por uma refatoração técnica profunda em Dezembro de 2025 para garantir longevidade e qualidade profissional:
 
-| Problema | Causa | Solução |
-| :--- | :--- | :--- |
-| **`introduction.mdx` não visível** | O arquivo não existia no projeto original clonado. | O arquivo `src/introduction.mdx` foi criado com o conteúdo de introdução e o arquivo de configuração do Storybook (`.storybook/main.ts`) foi ajustado para incluir o caminho do arquivo na lista de *stories*. |
-| **Falta de Componentes** | O repositório clonado não continha todos os componentes do desafio do Capítulo 15. | O projeto foi recriado a partir do repositório original, e o `introduction.mdx` foi adicionado e configurado corretamente. |
+| Área | Melhoria Implementada |
+| :--- | :--- |
+| **Estabilidade** | Downgrade estratégico para **Storybook v8.6.14** para resolver conflitos críticos com o Vite. |
+| **Qualidade** | Implementação de **100% de cobertura de testes** (Jest) para componentes core como `Dropdown`, `Tabs` e `Pagination`. |
+| **Documentação** | Criação de uma `Introduction.mdx` moderna e migração para **Autodocs**, eliminando arquivos `.stories.mdx` legados. |
+| **DevOps** | Configuração de Pipeline de CI/CD para build e deploy automático a cada push na `main`. |
 
-## Próximos Passos
+---
 
-Após a instalação, você pode continuar o desenvolvimento do Design System, criando novos componentes e documentando-os no Storybook.
+## 🔗 Links Úteis
 
-**Autor:** Manus AI (Baseado no ebook "Design para Devs")
+* [Acessar Storybook Online (GitHub Pages)](https://lh5818181.github.io/github-design-system/)
+* [Repositório Original do Desafio](https://github.com/d3vlopes/github-design-system)
+
+---
+
+**Desenvolvido por Luis Henrique**
+[cite_start]*Baseado nos ensinamentos de Leandro Lopes [cite: 601]*
